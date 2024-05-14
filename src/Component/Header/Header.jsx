@@ -32,8 +32,8 @@ const Header = () => {
         logOut()
     }
     return (
-        <div className="font-Mulish">
-            <div className={`navbar lg:px-24 transition-all duration-1000 text-white z-50 fixed top-0 left-0 right-0 bg-transparent ${active ? "activecls" : ""}`}>
+        <div className="">
+            <div className={` navbar pt-5 lg:px-24 transition-all duration-1000 text-white z-50 fixed top-0 left-0 right-0 bg-transparent ${active ? "activecls" : ""}`}>
                 <div className="navbar-start ">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -56,7 +56,7 @@ const Header = () => {
                     </ul>
                 </div>
                 {
-                user ? <div className="pl-[90px] md:pl-60 lg:pl-4"><a id="clickable"><div className="w-[45px] cursor-pointer rounded-full ring ring-[#cfaf45] ring-offset-base-100 ring-offset-2">
+                user ? <div className="navbar-end pr-4 "><a id="clickable"><div className="w-[45px] cursor-pointer rounded-full ring ring-[#cfaf45] ring-offset-base-100 ring-offset-2">
                     <img className="w-full rounded-full" src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
                 </div></a>
                     <Tooltip className="bg-[#cfaf45] rounded-xl p-2 space-y-3" anchorSelect="#clickable" clickable>
@@ -64,7 +64,7 @@ const Header = () => {
                         <button className="bg-transparent text-lg font-bold  border border-[#cfaf45] text-[#cfaf45] rounded-md p-2 flex gap-1 items-center hover:text-white hover:bg-[#cfaf45] transition-all duration-1000 w-full btn" ><Link to='/login' onClick={handleLogout} className="w-full text-white text-[16px] font-bold">Logout</Link></button>
 
                     </Tooltip> </div> :
-                    <div className="md:navbar-end flex justify-end items-center gap-2  md:pl-8"><Link to='/login' className=" text-[12px] p-2 md:p-4 md:text-[16px] font-bold btn bg-transparent text-white">Login</Link>
+                    <div className="navbar-end gap-2 md:pl-8"><Link to='/login' className=" text-[12px] p-2 md:p-4 md:text-[16px] font-bold btn bg-transparent text-white">Login</Link>
                         <Link to='/register' className="text-[12px] p-2 md:p-4 md:text-[16px] font-bold btn bg-transparent text-white">Register</Link></div>
 
                 }
