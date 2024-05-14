@@ -2,7 +2,7 @@
 import { ScrollRestoration } from "react-router-dom";
 const AboutUs = () => {
     return (
-        <div className="font-Mulish ">
+        <div className="bg-[#18181b]">
            
            <section className="">
                 <div className=" bg-cover max-h-[300px] bg-slate-50 " style={{ backgroundImage: `url(https://i.postimg.cc/HnPhy6QT/frame-from-plants-drawing-suplies.webp)` }}>
@@ -18,8 +18,8 @@ const AboutUs = () => {
                     <div data-aos="fade-up"
                 data-aos-duration="1000" className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
                         <div >
-                            <h3 className="text-2xl font-bold tracking-tight sm:text-3xl t">About Us </h3>
-                            <p className="mt-3 text-lg ">Welcome to FaLi Villa, your destination for exceptional real estate experiences. We curate a collection of unique properties that cater to every lifestyle. Whether you seek a cozy abode or a luxurious retreat, we're here to help you find your dream home. Explore our portfolio and let us guide you to a property that reflects your individuality and aspirations. With FaLi Villa, your real estate dreams become a captivating reality.</p>
+                            <h3 className="text-2xl font-bold tracking-tight sm:text-3xl text-[#cfaf45]">About Us </h3>
+                            <p className="mt-3 text-white  text-lg ">Welcome to FaLi Villa, your destination for exceptional real estate experiences. We curate a collection of unique properties that cater to every lifestyle. Whether you seek a cozy abode or a luxurious retreat, we're here to help you find your dream home. Explore our portfolio and let us guide you to a property that reflects your individuality and aspirations. With FaLi Villa, your real estate dreams become a captivating reality.</p>
 
                         </div>
                         <div  aria-hidden="true" className="mt-10 lg:mt-0  ">
@@ -30,8 +30,8 @@ const AboutUs = () => {
                         <div  data-aos="fade-up"
                 data-aos-duration="1000" className="grid lg:gap-8 lg:grid-cols-2 lg:items-center ">
                             <div  className="lg:col-start-2">
-                                <h3 className="text-2xl font-bold tracking-tight sm:text-3xl t">Fictitious Founding Story</h3>
-                                <p className="mt-3 text-lg ">Founded in 2008 in Villa Springs by visionary entrepreneurs Fiona Lawson and Liam Villanova, FaLi Villa is the result of their shared passion for architecture and design. Fiona, an architect, and Liam, a real estate investor, combined their expertise to redefine the real estate landscape. The name "FaLi Villa" honors their commitment to exceptional service and curated homes. Since inception, FaLi Villa has been synonymous with personalized attention, exceptional properties, and fulfilling real estate journeys.</p>
+                                <h3 className="text-2xl font-bold tracking-tight sm:text-3xl t text-[#cfaf45]">Fictitious Founding Story</h3>
+                                <p className="mt-3 text-white  text-lg ">Founded in 2008 in Villa Springs by visionary entrepreneurs Fiona Lawson and Liam Villanova, FaLi Villa is the result of their shared passion for architecture and design. Fiona, an architect, and Liam, a real estate investor, combined their expertise to redefine the real estate landscape. The name "FaLi Villa" honors their commitment to exceptional service and curated homes. Since inception, FaLi Villa has been synonymous with personalized attention, exceptional properties, and fulfilling real estate journeys.</p>
                             </div>
                             <div  className="mt-10 lg:mt-0 lg:col-start-1 lg:row-start-1">
                                 <img src="https://i.ibb.co/Tt1HvJK/35839-1.jpg" alt="" className="mx-auto rounded-lg shadow-lg bg-gray-500" />
@@ -40,15 +40,15 @@ const AboutUs = () => {
                     </div>
                 </div>
             </section>
-            <section className="max-w-6xl mb-8 mx-auto">
+            <section className="max-w-6xl pb-8 mx-auto">
                 <div  data-aos="fade-up"
                 data-aos-duration="1000" className=" flex flex-col-reverse  lg:flex-row">
                     <div className="flex flex-col px-6 py-8 space-y-6 rounded-sm sm:p-8 lg:p-12 lg:w-1/2 xl:w-2/5 ">
 
                         <div  className="lg:col-start-2">
-                            <h3 className="text-2xl font-bold tracking-tight sm:text-4xl">Why Choose Us</h3>
-                            <p className="mt-3 text-lg ">When it comes to selecting a real estate partner, why choose us? Because we offer more than just transactions – we provide personalized experiences tailored to your unique needs and preferences. We go above and beyond to ensure your satisfaction every step of the way. </p>
-                            <div className="flex mt-3 justify-between">
+                            <h3 className="text-2xl text-[#cfaf45] font-bold tracking-tight sm:text-4xl">Why Choose Us</h3>
+                            <p className="mt-3 text-white  text-lg ">When it comes to selecting a real estate partner, why choose us? Because we offer more than just transactions – we provide personalized experiences tailored to your unique needs and preferences. We go above and beyond to ensure your satisfaction every step of the way. </p>
+                            <div className="flex mt-3 text-white justify-between">
                                 <div className="p-1">
                                     <h1 className="font-bold text-xl">20+ Years</h1>
                                     <p>Of Real Estate Experience</p>

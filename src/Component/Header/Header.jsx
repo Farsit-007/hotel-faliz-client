@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import '../Header/Header.css'
 import { Tooltip } from 'react-tooltip'
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import f1 from '../../assets/fav.png'
 const Header = () => {
     const [active, setActive] = useState(false);
     const { user, logOut } = useContext(AuthContext);
@@ -44,7 +45,7 @@ const Header = () => {
                     </div>
                     <div className="flex gap-3 items-center">
                         <div className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]">
-                            {/* <img src={f1} alt="" /> */}
+                            <img src={f1} alt="" />
                         </div>
                         <Link to='/' className="text-xl md:text-4xl text-[#cfaf45] font-extrabold ">H<span className="text-white" >o</span>T<span className="text-white" >e</span>l F<span className="text-white" >a</span>L<span className="text-white" >i</span>z</Link>
                     </div>

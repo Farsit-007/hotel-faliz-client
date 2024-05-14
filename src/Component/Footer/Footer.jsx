@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useContext } from "react";
+import im from '../../assets/fav.png'
 const Footer = () => {
     const { user } = useContext(AuthContext);
     return (
@@ -9,7 +10,7 @@ const Footer = () => {
                 <aside>
                     <div className='flex flex-col lg:flex-row gap-4 items-center'>
                         <figure className='h-[60px] w-[60px]' >
-                            {/* <img src={im}  alt="" /> */}
+                            <img src={im}  alt="" />
                         </figure>
                         <div>
                             <Link to='/' className="text-xl md:text-4xl text-[#cfaf45] font-extrabold ">H<span className="text-white" >o</span>T<span className="text-white" >e</span>l F<span className="text-white" >a</span>L<span className="text-white" >i</span>z</Link>
