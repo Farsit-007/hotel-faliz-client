@@ -44,14 +44,13 @@ const Review = () => {
             <section className="">
                 <div className="container px-6 py-10 mx-auto">
                     <div className="py-8 my-8">
-                    <h1 className="text-2xl font-semibold text-center text-[#cfaf45] capitalize lg:text-3xl ">
-                        What our clients say
-                    </h1>
+                        <h1 className="text-2xl font-semibold text-center text-[#cfaf45] capitalize lg:text-3xl ">
+                            What our clients say
+                        </h1>
 
-                    <p className="max-w-2xl mx-auto text-slate-300 mt-6 text-center ">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error
-                        alias, adipisci rem similique, at omnis eligendi optio eos harum.
-                    </p>
+                        <p className="max-w-2xl mx-auto text-slate-300 mt-6 text-center ">
+                            Welcome to firsthand testimonials from our valued guests! Their experiences speak volumes about our commitment to exceptional hospitality. Delve into these authentic accounts to learn how we've made every stay memorable
+                        </p>
                     </div>
                     <Swiper
 

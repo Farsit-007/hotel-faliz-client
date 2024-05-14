@@ -24,7 +24,6 @@ const Map = () => {
                                 <MapContainer className='z-10'
                                     center={[bangladeshCoordinates.lat, bangladeshCoordinates.lng]}
                                     zoom={7}
-                                    scrollWheelZoom={true} // Enable scroll wheel zoom
                                     style={{ height: '100%', width: '100%' }}
                                 >
                                     <TileLayer
@@ -45,10 +44,6 @@ const Map = () => {
                     </div>
                 </div>
             </div>
-
-
-
-
         </section>
 
     );

@@ -62,7 +62,7 @@ const FeaturedRoom = () => {
 
                 <div className='grid max-w-6xl mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8'>
                     {
-                        rooms.map(room => <SwiperSlide className='py-10 px-5 md:px-0' key={room._id}>
+                        rooms.filter(room1 => room1.availability === 'Available').map(room => <SwiperSlide className='py-10 px-5 md:px-0' key={room._id}>
                             <div className="relative">
                                 <div className=" text-center border flex flex-col gap-2  p-2 ">
                                     <div className="relative">

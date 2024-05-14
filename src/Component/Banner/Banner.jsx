@@ -18,7 +18,7 @@ const Banner = () => {
                     <h1 className='text-2xl md:text-4xl font-bold mb-4'>
                     Choose from a diverse range of hotels, each celebrated for its distinct character and aesthetic allure.
                     </h1>
-                    <Link to='/rooms' className='border mt-5 bg-transparent animate__animated  animate__fadeInLeft border-white py-2 px-4 font-bold text-white  hover:bg-[#b70050] transition-all duration-1000'>
+                    <Link to='/rooms' className='border mt-5 bg-transparent animate__animated  animate__fadeInLeft border-white py-2 px-4 font-bold text-white  hover:bg-[#cfaf45] transition-all duration-1000'>
                         View All Items
                     </Link>
                 </div>
