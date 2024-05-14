@@ -140,14 +140,9 @@ const MyBooking = () => {
 
 
 
-
-
-
-
-
                     {showModal && (
                         <div className="fixed inset-0 z-10 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
-                            <div className="relative w-auto max-w-md p-6 my-8 mx-auto bg-white rounded-md shadow-lg">
+                            <div className="relative w-auto max-w-md p-6 py-8 mx-auto bg-white rounded-md shadow-lg">
                                 <div className="text-center">
                                     <h3 className="text-lg py-4 font-semibold leading-6 text-gray-900">Reservations Date</h3>
                                     <form onSubmit={handleConfirm}>
