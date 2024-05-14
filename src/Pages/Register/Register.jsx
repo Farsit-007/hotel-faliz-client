@@ -7,6 +7,9 @@ import toast from 'react-hot-toast';
 import { AuthContext } from "../../Component/AuthProvider/AuthProvider";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const Register = () => {
     const { createUser, profileUpdate } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -37,12 +40,13 @@ const Register = () => {
         }
     }
     return (
-        <div className="flex justify-center  items-center min-h-[700px] font-Meri w-full  bg-cover" style={{ backgroundImage: `url(https://i.postimg.cc/63W5QQWC/three-dimensional-tree-with-foliage.webp)` }}>
+        <div className="flex justify-center bg-[#18181b]  items-center min-h-[700px] w-full  bg-cover" >
 <Helmet>
                 <title>HoTel FaLiz | Register</title>
             </Helmet>
-            <div className="flex justify-center items-center min-h-screen">
-                <div className="flex flex-col md:w-[450px] animate__animated animate__zoomIn mt-8 p-10 pb-4 pt-2 rounded-xl text-white bg-opacity-5 backdrop-blur-3xl bg-[#b7004f3d]">
+            <div data-aos="zoom-in"
+                data-aos-duration="1000" className="flex justify-center items-center min-h-screen">
+                <div className="flex flex-col md:w-[450px]  mt-8 p-10 pb-4 pt-2 rounded-xl text-white bg-opacity-5 backdrop-blur-3xl bg-[#cfaf4542]">
                     <div className="mb-4 text-center border-b-2">
                         <h1 className="my-2 text-3xl font-bold  ">Register your account</h1>
                     </div>
@@ -50,13 +54,13 @@ const Register = () => {
                         <div className="space-y-2">
                             <div>
                                 <label htmlFor="name" className="block  mb-2 text-sm">Username</label>
-                                <input type="text" placeholder="Enter your Name" className="w-full px-3 py-2 border outline-none rounded-md  bg-transparent  "
+                                <input type="text" placeholder="Enter your Name" className="w-full px-3 py-2 border outline-none   bg-transparent  "
                                     {...register("userName")}
                                 />
                             </div>
                             <div>
                                 <label htmlFor="email" className="block mb-2   text-sm">Email address</label>
-                                <input type="email" placeholder="Enter your email address" className="w-full px-3 py-2 border outline-none rounded-md border-gray-200 bg-transparent  "  {...register("userEmail",
+                                <input type="email" placeholder="Enter your email address" className="w-full px-3 py-2 border outline-none  border-gray-200 bg-transparent  "  {...register("userEmail",
                                     {
                                         required: true,
                                         pattern: {
@@ -70,7 +74,7 @@ const Register = () => {
                             </div>
                             <div>
                                 <label htmlFor="photo" className="block   mb-2 text-sm">Photo url</label>
-                                <input type="url" placeholder="Enter your photo url" className="w-full px-3 py-2 border outline-none rounded-md bg-transparent  " {...register("userPhoto")} />
+                                <input type="url" placeholder="Enter your photo url" className="w-full px-3 py-2 border outline-none  bg-transparent  " {...register("userPhoto")} />
                             </div>
 
                             <div>
@@ -79,7 +83,7 @@ const Register = () => {
 
                                 </div>
                                 <div className="relative">
-                                    <input type={show ? "text" : "password"} placeholder="Enter your password" className="w-full outline-none px-3 py-2 border rounded-md border-gray-200 bg-transparent  "
+                                    <input type={show ? "text" : "password"} placeholder="Enter your password" className="w-full outline-none px-3 py-2 border  border-gray-200 bg-transparent  "
                                         {...register("userPassword",
                                             {
                                                 required: true,
@@ -110,7 +114,7 @@ const Register = () => {
                         </div>
                         <div className="space-y-2">
                             <div>
-                                <button type="submit" className="w-full px-8 py-2 font-bold rounded-md bg-[#b70050] text-xl ">Register</button>
+                                <button type="submit" className="bg-transparent w-full text-lg font-bold border border-[#cfaf45] text-white  p-2 flex gap-1 items-center hover:text-white justify-center hover:bg-[#cfaf45] px-4 transition-all duration-1000 ">Register</button>
                             </div>
                             <p className="px-6 text-sm text-center text-gray-300">Already have an account?
                                 <Link to="/login" className="hover:underline pl-1 text-red-600 font-extrabold">Login</Link>

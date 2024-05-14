@@ -65,7 +65,7 @@ const Login = () => {
 
                             <div>
                                 <label htmlFor="email" className="block text-white  mb-2 text-sm">Email address</label>
-                                <input type="email" name="email" id="email" placeholder="Enter your email address" className="w-full outline-none px-3 py-2 border rounded-md border-gray-200 bg-transparent " {...register("userEmail",
+                                <input type="email" name="email" id="email" placeholder="Enter your email address" className="w-full outline-none px-3 py-2 border  border-gray-200 bg-transparent " {...register("userEmail",
                                     {
                                         required: true,
                                         pattern: {
@@ -83,7 +83,7 @@ const Login = () => {
 
                                 </div>
                                 <div className="relative">
-                                    <input type={show ? "text" : "password"} placeholder="Enter your password" className="w-full px-3 py-2 outline-none border rounded-md border-gray-200 bg-transparent  "
+                                    <input type={show ? "text" : "password"} placeholder="Enter your password" className="w-full px-3 py-2 outline-none border  border-gray-200 bg-transparent  "
                                         {...register("userPassword",
                                             {
                                                 required: true,
