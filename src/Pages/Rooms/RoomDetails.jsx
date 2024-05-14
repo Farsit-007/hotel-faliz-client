@@ -2,7 +2,7 @@ import { CiLogin, CiLogout } from "react-icons/ci";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { FaCaretRight, FaDumbbell, FaWifi } from "react-icons/fa6";
 import DatePicker from "react-datepicker";
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import { IoPeopleCircleOutline } from "react-icons/io5";
 import { MdFreeBreakfast, MdOutlineBedroomParent, MdPool, MdReviews } from "react-icons/md";
@@ -24,6 +24,12 @@ const RoomDetails = () => {
     const { _id, description, price_per_night, size, special_offers, images, name, availability, Review_Count } = rooms;
     const [showModal, setShowModal] = useState(false);
     const [rating, setRating] = useState({})
+    useEffect(() => {
+        const storedBookingCompleted = localStorage.getItem('bookingCompleted');
+        if (storedBookingCompleted) {
+            setBookingCompleted(JSON.parse(storedBookingCompleted));
+        }
+    }, []);
     const handlebook = async (e) => {
         e.preventDefault();
         if (!user || !user?.email) {
@@ -50,6 +56,7 @@ const RoomDetails = () => {
             const { data2 } = await axios.patch(`https://server-navy-two-99.vercel.app/booking/${_id}`, { availability: 'Unavailable' })
             setShowModal(true);
             setBookingCompleted(true)
+            localStorage.setItem('bookingCompleted', JSON.stringify(true));
         } catch (err) {
             toast.error(err.response.data);
         }
