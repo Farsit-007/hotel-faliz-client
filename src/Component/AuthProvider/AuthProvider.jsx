@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Firebase/Firebase.config";
@@ -18,7 +19,7 @@ const AuthProvider = ({ children }) => {
 
     const logOut = async() => {
         setLoading(true)
-         const {data} =  await axios(`https://server-navy-two-99.vercel.app/logout`,{withCredentials:true})
+         const {data} =  await axios.post(`https://server-navy-two-99.vercel.app/logout`,{},{withCredentials:true})
         console.log(data);
          return signOut(auth)
     }
