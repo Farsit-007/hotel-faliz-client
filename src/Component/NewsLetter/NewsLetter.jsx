@@ -24,10 +24,10 @@ const NewsLetter = () => {
                 <div className="w-full">
                     <div className="flex flex-col md:flex-row justify-around items-center">
                         <div>
-                            <h1 className="text-3xl text-white font-semibold lg:text-4xl">
+                            <h1 className="text-4xl text-white font-semibold lg:text-4xl">
                                 Subscribe To The <span className="text-[#cfaf45]">Newsletter</span>
                             </h1>
-                            <p className="mt-3 text-gray-600 dark:text-gray-400">
+                            <p className="mt-3 text-gray-600 text-lg dark:text-gray-400">
                                 Be the first to know when our <span className="font-medium text-[#cfaf45]">Brand</span> is live
                             </p>
                         </div>

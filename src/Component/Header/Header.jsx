@@ -16,16 +16,16 @@ const Header = () => {
         }
     })
     const Links = < >
-        <li className="text-[16px] font-bold"><NavLink to='/'>Home</NavLink></li>
-        <li className="text-[16px] font-bold"><NavLink to='/rooms' >Rooms</NavLink></li>
+        <li className="text-lg font-bold"><NavLink to='/'>Home</NavLink></li>
+        <li className="text-lg font-bold"><NavLink to='/rooms' >Rooms</NavLink></li>
         {
             user &&
             <>
-                <li className="text-[16px] font-bold"><NavLink to='/mybooking'   >My Bookings</NavLink></li>
+                <li className="text-lg font-bold"><NavLink to='/mybooking'   >My Bookings</NavLink></li>
             </>
         }
-        <li className="text-[16px] font-bold"><NavLink to='/aboutus'   >About Us</NavLink></li>
-        <li className="text-[16px] font-bold"><NavLink to='/contact'   >Contact Us</NavLink></li>        
+        <li className="text-lg font-bold"><NavLink to='/aboutus'   >About Us</NavLink></li>
+        <li className="text-lg font-bold"><NavLink to='/contact'   >Contact Us</NavLink></li>        
         
     </>
     const handleLogout = () => {
@@ -64,8 +64,8 @@ const Header = () => {
                         <button className="bg-transparent text-lg font-bold  border border-[#cfaf45] text-[#cfaf45] rounded-md p-2 flex gap-1 items-center hover:text-white hover:bg-[#cfaf45] transition-all duration-1000 w-full btn" ><Link to='/login' onClick={handleLogout} className="w-full text-white text-[16px] font-bold">Logout</Link></button>
 
                     </Tooltip> </div> :
-                    <div className="navbar-end gap-2 md:pl-8"><Link to='/login' className=" text-[12px] p-2 md:p-4 md:text-[16px] font-bold btn bg-transparent text-white">Login</Link>
-                        <Link to='/register' className="text-[12px] p-2 md:p-4 md:text-[16px] font-bold btn bg-transparent text-white">Register</Link></div>
+                    <div className="navbar-end gap-2 md:pl-8"><Link to='/login' className=" text-[12px] p-2 md:px-6 md:text-lg font-bold bg-transparent border border-[#cfaf45] text-[#cfaf45]  flex gap-1 items-center hover:text-white hover:bg-[#cfaf45] transition-all duration-1000">Login</Link>
+                        <Link to='/register' className="text-[12px] p-2 md:px-6 md:text-lg font-bold bg-transparent border border-[#cfaf45] text-[#cfaf45]  flex gap-1 items-center hover:text-white hover:bg-[#cfaf45] transition-all duration-1000">Register</Link></div>
 
                 }
                 

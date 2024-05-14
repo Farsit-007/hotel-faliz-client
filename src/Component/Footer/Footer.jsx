@@ -21,18 +21,18 @@ const Footer = () => {
                 <nav className='text-white'>
                     <h6 className="footer-title">Company</h6>
                     <div className="flex gap-3">
-                        <Link to='/' className="link link-hover">Home</Link>
-                        <Link to='/rooms' className="link link-hover">Rooms</Link>
+                        <Link to='/' className="link link-hover text-lg">Home</Link>
+                        <Link to='/rooms' className="link link-hover text-lg">Rooms</Link>
 
                         {
                             user &&
                             <>
-                                <Link to='/mybooking' className="link link-hover">My Bookings</Link>
+                                <Link to='/mybooking' className="link link-hover text-lg">My Bookings</Link>
 
                             </>
                         }
-                        <Link to='/aboutus' className="link link-hover">About Us</Link>
-                        <Link to='/contact' className="link link-hover">Contact Us</Link>
+                        <Link to='/aboutus' className="link link-hover text-lg">About Us</Link>
+                        <Link to='/contact' className="link link-hover text-lg">Contact Us</Link>
                     </div>
                 </nav>
                 <nav className='text-white'>
@@ -46,7 +46,7 @@ const Footer = () => {
 
             </footer>
             <div className='flex text-center justify-center max-w-6xl mx-auto text-slate-300 py-5'>
-                <p>Copyright © 2024 - All right reserved by FaLi Industries Ltd</p>
+                <p>Copyright © 2024 - All right reserved by FaLiz Industries Ltd</p>
             </div>
         </div>
     );

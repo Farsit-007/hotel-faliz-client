@@ -44,12 +44,12 @@ const Review = () => {
         data-aos-duration="1000"  className="max-w-6xl mx-auto py-10 m">
             <section className="">
                 <div className="container px-6 py-10 mx-auto">
-                    <div className="py-8 my-8">
-                        <h1 className="text-2xl font-semibold text-center text-[#cfaf45] capitalize lg:text-3xl ">
+                    <div className="py-8 mb-8">
+                        <h1 className="text-2xl font-semibold text-center text-[#cfaf45] capitalize lg:text-5xl ">
                             What our clients say
                         </h1>
 
-                        <p className="max-w-2xl mx-auto text-slate-300 mt-6 text-center ">
+                        <p className="max-w-2xl mx-auto text-slate-300 mt-6 text-lg text-center ">
                             Welcome to firsthand testimonials from our valued guests! Their experiences speak volumes about our commitment to exceptional hospitality. Delve into these authentic accounts to learn how we've made every stay memorable
                         </p>
                     </div>
@@ -77,8 +77,8 @@ const Review = () => {
                                             </div>
                                             <div className="mx-2">
                                                 <div className="flex gap-10 text-slate-300">
-                                                    <h1 className="font-semibold  ">{rev.name}  </h1>
-                                                    <p>{new Date(rev.createdAt).toLocaleDateString()}</p>
+                                                    <h1 className="font-semibold text-xl ">{rev.name}  </h1>
+                                                    <p className="text-2xl text-[#cfaf45]">{new Date(rev.createdAt).toLocaleDateString()}</p>
                                                 </div>
                                                 <div className="flex items-center">
                                                     {Array.from({ length: rev.ratings }, (_, index) => (
@@ -91,7 +91,7 @@ const Review = () => {
                                             <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
                                             <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
                                         </svg>
-                                        <p className=" text-center text-slate-300 py-1 text-lg italic">{rev.comment}</p>
+                                        <p className=" text-center text-slate-300 py-1 text-xl italic">{rev.comment}</p>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute bottom-0 right-0 w-8 h-8 dark:text-gray-300">
                                             <path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
                                             <path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>

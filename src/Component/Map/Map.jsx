@@ -16,10 +16,10 @@ const Map = () => {
                 <h1 className='text-5xl text-[#cfaf45]'>About Our Hotel Locations </h1>
             </div>
             <div className='flex flex-col lg:flex-row max-w-6xl items-center mx-auto'>
-                <div className=' lg:w-[35%] text-slate-300 flex flex-col gap-3  '>
+                <div className=' lg:w-[35%] p-3 text-slate-300 flex flex-col gap-3  '>
                     <h1 className='text-3xl font-bold'>Discover Our Diverse Hotel </h1>
-                    <p className='flex  gap-2'> <FaMapSigns className='text-[#cfaf45]' />Hotels centrally located for easy access to attractions and dining</p>
-                    <p  className='flex  gap-2'><FaMapSigns className='text-[#cfaf45]'/> Peaceful hotels surrounded by scenic landscapes for nature lovers</p>
+                    <p className='flex text-lg gap-2'> <FaMapSigns className='text-[#cfaf45]' />Hotels centrally located for easy access to attractions and dining</p>
+                    <p  className='flex text-lg  gap-2'><FaMapSigns className='text-[#cfaf45]'/> Peaceful hotels surrounded by scenic landscapes for nature lovers</p>
                 </div>
                 <div className='w-full lg:w-[65%]'>
                     <div className="p-6 mt-8 ">

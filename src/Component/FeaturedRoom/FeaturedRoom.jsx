@@ -6,7 +6,6 @@ import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
 import '../FeaturedRoom/Sub.css'
 import { Link } from 'react-router-dom';
-import { MdOutlineSell } from 'react-icons/md';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
@@ -79,19 +78,19 @@ const FeaturedRoom = () => {
                                             />
                                             <div className="absolute inset-0  bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-500 hover:opacity-100">
                                                 <div className="text-white text-center p-4">
-                                                    <p className="text-lg font-bold">{room.name}</p>
+                                                    <p className="text-xl font-bold">{room.name}</p>
                                                 </div>
                                             </div>
 
                                         </figure>
                                         <div className="absolute top-3 left-3">
-                                            <div className="badge badge-ghost bg-[#cfaf45] border-none font-semibold text-white text-md "><MdOutlineSell /> {room.price_per_night}  || Night</div>
+                                            <div className="badge badge-ghost p-4 bg-[#cfaf45] border-none font-semibold text-white text-lg ">$ {room.price_per_night}  || Night</div>
                                         </div>
                                     </div>
 
                                     <div className=" text-center">
 
-                                        <div className=" p-2 text-slate-300">
+                                        <div className=" text-lg p-2 text-slate-300">
                                             <p>{room.description.slice(0, 120)}....</p>
                                         </div>
                                     </div>
