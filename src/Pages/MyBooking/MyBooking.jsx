@@ -73,6 +73,16 @@ const MyBooking = () => {
 
     return (
         <div className="bg-[#18181b]">
+            <>
+                {booking.length === 0 && (
+                    <style>
+                        {`
+                                .section-no-cards {
+                                    margin-bottom: 55px;
+                                }
+                            `}
+                    </style>
+                )}
             <section className="">
                 <div className=" bg-cover max-h-[300px] bg-slate-50 " style={{ backgroundImage: `url(https://i.postimg.cc/HnPhy6QT/frame-from-plants-drawing-suplies.webp)` }}>
 
@@ -82,8 +92,7 @@ const MyBooking = () => {
                 </div>
             </section>
 
-            <div className="max-w-6xl mx-auto py-8">
-
+            <div className="max-w-6xl mx-auto py-8 ">
                 <div className="overflow-x-auto">
                     <table className="table section-no-cards">
                         <thead className="">
@@ -157,6 +166,7 @@ const MyBooking = () => {
                     )}
                 </div>
             </div>
+            </>
         </div >
     );
 };

@@ -24,7 +24,7 @@ const Header = () => {
             </>
         }
         <li className="text-[16px] font-bold"><NavLink to='/about'   >About Us</NavLink></li>
-        <li className="text-[16px] font-bold"><NavLink to='/about'   >Contact Us</NavLink></li>        
+        <li className="text-[16px] font-bold"><NavLink to='/contact'   >Contact Us</NavLink></li>        
         
     </>
     const handleLogout = () => {

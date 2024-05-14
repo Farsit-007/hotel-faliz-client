@@ -10,6 +10,7 @@ import { MdOutlineSell } from 'react-icons/md';
 
 const FeaturedRoom = () => {
     const [rooms, setRooms] = useState([])
+    
     useEffect(() => {
         const getData = async () => {
             const { data } = await axios(`https://server-navy-two-99.vercel.app/featured-room`)

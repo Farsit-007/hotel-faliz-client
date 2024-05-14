@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { MdOutlineSell, MdReviews } from "react-icons/md";
+import {  MdReviews } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const Rooms = () => {
@@ -41,6 +41,16 @@ const Rooms = () => {
 
     return (
         <div className="bg-[#18181b]">
+              <>
+                {rooms.length === 0 && (
+                    <style>
+                        {`
+                                .section-no-cards {
+                                    margin-bottom: 70px;
+                                }
+                            `}
+                    </style>
+                )}
             <section className="bg-cover max-h-[300px] bg-slate-50" style={{ backgroundImage: `url(https://i.postimg.cc/HnPhy6QT/frame-from-plants-drawing-suplies.webp)` }}>
                 <div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-gray-900">
                     <h1 className="text-4xl mt-8 md:mt-0 font-bold leading-none sm:text-7xl xl:max-w-3xl text-white playfair">Add Your Craft Items</h1>
@@ -48,7 +58,7 @@ const Rooms = () => {
             </section>
 
            
-            <div className="flex justify-center my-10">
+            <div className="flex justify-center my-10 section-no-cards">
                 <form onSubmit={handleFilter} className="mb-4">
                    <div className="flex flex-col md:flex-row gap-3">
                    <div className="flex flex-col md:flex-row gap-3 items-center">
@@ -64,7 +74,7 @@ const Rooms = () => {
             </div>
 
       
-            <div className="grid max-w-6xl mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            <div className="grid max-w-6xl mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-10">
                 {rooms.filter(room1 => room1.availability === 'Available').map(room => (
                     <div className="relative" key={room._id}>
                         <Link to={`/roomsdetails/${room._id}`}>
@@ -99,6 +109,7 @@ const Rooms = () => {
                     </div>
                 ))}
             </div>
+            </>
         </div>
     );
 };
