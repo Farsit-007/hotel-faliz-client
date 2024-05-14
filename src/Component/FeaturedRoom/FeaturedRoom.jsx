@@ -7,7 +7,9 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import '../FeaturedRoom/Sub.css'
 import { Link } from 'react-router-dom';
 import { MdOutlineSell } from 'react-icons/md';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const FeaturedRoom = () => {
     const [rooms, setRooms] = useState([])
     
@@ -43,7 +45,8 @@ const FeaturedRoom = () => {
     };
 
     return (
-        <div className='max-w-6xl mx-auto'>
+        <div data-aos="fade-up"
+        data-aos-duration="1000"  className='max-w-6xl mx-auto'>
             <div className="text-center my-10">
                 <h1 className="text-3xl text-[#cfaf45] md:text-5xl">Featured Rooms</h1>
             </div>

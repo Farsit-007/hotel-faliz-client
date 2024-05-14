@@ -1,6 +1,8 @@
 import axios from "axios";
 import toast from "react-hot-toast";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const NewsLetter = () => {
     const handleNewsLetter = async (e) => {
         e.preventDefault()
@@ -16,7 +18,8 @@ const NewsLetter = () => {
         }
     }
     return (
-        <div className="bg-[#27272c] p-20">
+        <div data-aos="zoom-in"
+        data-aos-duration="1000"  className="bg-[#27272c] my-10 p-20">
             <div className="items-center lg:flex">
                 <div className="w-full">
                     <div className="flex flex-col md:flex-row justify-around items-center">

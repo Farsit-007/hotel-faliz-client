@@ -26,7 +26,7 @@ const ContactUs = () => {
                 <title>HoTel FaLiz | Contact Us</title>
             </Helmet>
             <div className="max-w-6xl py-28 mx-auto">
-                <section data-aos="fade-up"
+                <section data-aos="zoom-in"
                 data-aos-duration="1000" className="py-8  bg-[#cfaf4542] rounded-xl">
                     <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
                         <div className="py-6 md:py-0 text-white md:px-6">
@@ -65,9 +65,9 @@ const ContactUs = () => {
                             </label>
                             <label className="block">
                                 <span className="mb-1 text-white">Message</span>
-                                <textarea ref={msgref} rows="3"  placeholder="Message" className="block w-full text-[#cfaf45]focus:ring focus:ring-opacity-75 p-2 focus:ring-violet-400 "></textarea>
+                                <textarea ref={msgref} rows="3"  placeholder="Message" className="block w-full text-[#cfaf45] focus:ring focus:ring-opacity-75 p-2 focus:ring-violet-400 "></textarea>
                             </label>
-                            <button type="submit" className="bg-transparent  text-lg font-bold border border-[#cfaf45] text-[#cfaf45]  p-2 flex gap-1 items-center hover:text-white justify-center hover:bg-[#cfaf45] px-4 transition-all duration-1000 ">Submit</button>
+                            <button type="submit" className="bg-transparent  text-lg font-bold border border-[#cfaf45] text-white  p-2 flex gap-1 items-center hover:text-white justify-center hover:bg-[#cfaf45] px-4 transition-all duration-1000 ">Submit</button>
                         </form>
                     </div>
                 </section>

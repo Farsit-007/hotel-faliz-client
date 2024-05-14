@@ -33,7 +33,7 @@ const Header = () => {
     }
     return (
         <div className="">
-            <div className={` navbar pt-5 lg:px-24 transition-all duration-1000 text-white z-50 fixed top-0 left-0 right-0 bg-transparent ${active ? "activecls" : ""}`}>
+            <div className={` navbar py-5 lg:px-24 transition-all duration-1000 text-white z-50 fixed top-0 left-0 right-0 bg-transparent ${active ? "activecls" : ""}`}>
                 <div className="navbar-start ">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

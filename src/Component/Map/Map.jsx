@@ -3,11 +3,15 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { IoLocationOutline } from 'react-icons/io5';
 import 'leaflet/dist/leaflet.css';
 import { FaMapSigns } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const Map = () => {
     const bangladeshCoordinates = { lat: 23.685, lng: 90.3563 };
 
     return (
-        <section className="">
+        <section data-aos="zoom-in"
+        data-aos-duration="1000"  className="py-10">
             <div className='text-center py-10'>
                 <h1 className='text-5xl text-[#cfaf45]'>About Our Hotel Locations </h1>
             </div>

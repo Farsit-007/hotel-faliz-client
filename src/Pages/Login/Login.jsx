@@ -50,15 +50,13 @@ const Login = () => {
          }
     }
     
-
-
     return (
-        <div className="flex  pt-6 justify-center  items-center min-h-screen font-Meri w-full bg-cover" style={{ backgroundImage: `url(https://i.postimg.cc/kX25PqHb/tree-with-two-seasons-compared-scene-generative-ai.webp)` }}>
+        <div className="flex bg-[#18181b]  pt-6 justify-center  items-center min-h-screen w-full bg-cover" >
               <Helmet>
                 <title>HoTel FaLiz | Login</title>
             </Helmet>
             <div className="flex justify-center  items-center min-h-screen">
-                <div className="flex text-white flex-col animate__animated animate__zoomIn bg-opacity-5 backdrop-blur-3xl bg-[#b7004f3d]  md:w-[450px] p-10 pb-4 pt-2 rounded-xl ">
+                <div className="flex text-white flex-col  bg-opacity-5 backdrop-blur-3xl bg-[#cfaf4542]  md:w-[450px] p-10 pb-4 pt-2 rounded-xl ">
                     <div className="mb-4 text-center border-b-2">
                         <h1 className="my-2 text-3xl font-bold text-white ">Login</h1>
                     </div>
@@ -112,7 +110,7 @@ const Login = () => {
                         </div>
                         <div className="pt-1">
                             <div>
-                                <button type="submit" className="w-full px-8 py-2 font-semibold rounded-md bg-[#b70050]  text-xl text-white">Login</button>
+                                <button type="submit" className="bg-transparent w-full text-lg font-bold border border-[#cfaf45] text-white  p-2 flex gap-1 items-center hover:text-white justify-center hover:bg-[#cfaf45] px-4 transition-all duration-1000 ">Login</button>
                             </div>
 
                         </div>

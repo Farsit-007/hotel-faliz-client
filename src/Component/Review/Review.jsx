@@ -40,7 +40,8 @@ const Review = () => {
     };
 
     return (
-        <div className="max-w-6xl mx-auto">
+        <div  data-aos="zoom-in"
+        data-aos-duration="1000"  className="max-w-6xl mx-auto py-10 m">
             <section className="">
                 <div className="container px-6 py-10 mx-auto">
                     <div className="py-8 my-8">

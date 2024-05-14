@@ -1,7 +1,9 @@
 
 import { Link } from 'react-router-dom';
 import backgroundVideo from '../../assets/bv.mp4';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const Banner = () => {
     return (
         <div className='w-full font-Cormorant flex justify-start items-center min-h-screen'>
@@ -14,7 +16,8 @@ const Banner = () => {
                 <source src={backgroundVideo} type='video/mp4' />
             </video>
             <div className='w-11/12 md:w-4/5 mx-auto z-10 flex flex-col-reverse md:flex-row gap-12 items-center text-center text-white'>
-                <div className=' lg:w-[65%] mx-auto'>
+                <div data-aos="fade-up"
+                data-aos-duration="1000"  className=' lg:w-[65%] mx-auto'>
                     <h1 className='text-2xl md:text-4xl font-bold mb-4'>
                     Choose from a diverse range of hotels, each celebrated for its distinct character and aesthetic allure.
                     </h1>
