@@ -18,8 +18,9 @@ const AuthProvider = ({ children }) => {
 
     const logOut = async() => {
         setLoading(true)
-        await axios(`https://server-navy-two-99.vercel.app/logout`,{withCredentials:true})
-        return signOut(auth)
+         const {data} =  await axios(`https://server-navy-two-99.vercel.app/logout`,{withCredentials:true})
+        console.log(data);
+         return signOut(auth)
     }
     const profileUpdate = (name, image) => {
         return updateProfile(auth.currentUser, {
