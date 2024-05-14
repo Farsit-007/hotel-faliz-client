@@ -23,7 +23,7 @@ const Header = () => {
                 <li className="text-[16px] font-bold"><NavLink to='/mybooking'   >My Bookings</NavLink></li>
             </>
         }
-        <li className="text-[16px] font-bold"><NavLink to='/about'   >About Us</NavLink></li>
+        <li className="text-[16px] font-bold"><NavLink to='/aboutus'   >About Us</NavLink></li>
         <li className="text-[16px] font-bold"><NavLink to='/contact'   >Contact Us</NavLink></li>        
         
     </>
