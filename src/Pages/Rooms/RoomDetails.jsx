@@ -20,16 +20,20 @@ const RoomDetails = () => {
     const navigate = useNavigate()
     const { user } = useContext(AuthContext)
     const [startDate, setStartDate] = useState(new Date());
-    const [bookingCompleted, setBookingCompleted] = useState(false);
     const { _id, description, price_per_night, size, special_offers, images, name, availability, Review_Count } = rooms;
     const [showModal, setShowModal] = useState(false);
     const [rating, setRating] = useState({})
-    useEffect(() => {
-        const storedBookingCompleted = localStorage.getItem('bookingCompleted');
+    const [bookingCompleted, setBookingCompleted] = useState(() => {
+        const storedBookingCompleted = localStorage.getItem("bookingCompleted");
+        return storedBookingCompleted ? JSON.parse(storedBookingCompleted) : false;
+      });
+    
+      useEffect(() => {
+        const storedBookingCompleted = localStorage.getItem("bookingCompleted");
         if (storedBookingCompleted) {
-            setBookingCompleted(JSON.parse(storedBookingCompleted));
+          setBookingCompleted(JSON.parse(storedBookingCompleted));
         }
-    }, []);
+      }, []);
     const handlebook = async (e) => {
         e.preventDefault();
         if (!user || !user?.email) {
@@ -55,8 +59,8 @@ const RoomDetails = () => {
             const { data } = await axios.post(`https://server-navy-two-99.vercel.app/booking`, bookDetails)
             const { data2 } = await axios.patch(`https://server-navy-two-99.vercel.app/booking/${_id}`, { availability: 'Unavailable' })
             setShowModal(true);
-            setBookingCompleted(true)
-            localStorage.setItem('bookingCompleted', JSON.stringify(true));
+            setBookingCompleted(true);
+            localStorage.setItem("bookingCompleted", JSON.stringify(true));
         } catch (err) {
             toast.error(err.response.data);
         }
@@ -64,9 +68,9 @@ const RoomDetails = () => {
     }
     const closeModal = () => {
         setShowModal(false);
-        setBookingCompleted(true)
-        reviewSectionRef.current.scrollIntoView({ behavior: 'smooth' });
-    };
+        setBookingCompleted(true);
+        reviewSectionRef.current.scrollIntoView({ behavior: "smooth" });
+      };
 
     const ratingChanged = (newRating) => {
         console.log(newRating);
