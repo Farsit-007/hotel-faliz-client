@@ -1,4 +1,4 @@
-# Website Name -> 
+# Website Name -> HoTel FaLiz
 # Live Link ->  https://assignment-11-5a8b0.web.app/
 # Website Category -> Hotel Booking Website
 
