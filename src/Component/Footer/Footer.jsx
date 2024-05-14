@@ -4,15 +4,15 @@ import { useContext } from "react";
 const Footer = () => {
     const { user } = useContext(AuthContext);
     return (
-        <div className="font-Meri bg-[#05030a]">
-            <footer className="footer py-10 max-w-6xl mx-auto footer-center lg:footer pb-2 bg-[#05030a] text-white">
+        <div className="bg-[#000000]">
+            <footer className="footer py-10 max-w-6xl mx-auto footer-center lg:footer pb-2 bg-[#000000] text-white">
                 <aside>
                     <div className='flex flex-col lg:flex-row gap-4 items-center'>
                         <figure className='h-[60px] w-[60px]' >
-                              {/* <img src={im}  alt="" /> */}
+                            {/* <img src={im}  alt="" /> */}
                         </figure>
                         <div>
-                            <h1 className="text-2xl md:text-3xl text-[#b70050] font-extrabold ">Fa<span className="text-white" >L</span>i's  Cra<span className="text-white" >f</span>t</h1>
+                            <Link to='/' className="text-xl md:text-4xl text-[#cfaf45] font-extrabold ">H<span className="text-white" >o</span>T<span className="text-white" >e</span>l F<span className="text-white" >a</span>L<span className="text-white" >i</span>z</Link>
                         </div>
                     </div>
                 </aside>
@@ -26,12 +26,12 @@ const Footer = () => {
                         {
                             user &&
                             <>
-                                <Link to='/mybooking'  className="link link-hover">My Bookings</Link>
+                                <Link to='/mybooking' className="link link-hover">My Bookings</Link>
 
                             </>
                         }
-                        <Link  className="link link-hover">About Us</Link>
-                        <Link  className="link link-hover">Contact Us</Link>
+                        <Link to='/aboutus' className="link link-hover">About Us</Link>
+                        <Link to='/contact' className="link link-hover">Contact Us</Link>
                     </div>
                 </nav>
                 <nav className='text-white'>

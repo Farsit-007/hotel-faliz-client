@@ -76,6 +76,8 @@ const RoomDetails = () => {
         try {
             const { data } = await axios.post(`https://server-navy-two-99.vercel.app/review`, review)
             toast.success("Booking date updated successfully");
+            form.reset()
+            navigate('/mybooking')
         } catch (err) {
             toast.error(err.response.data);
         }
@@ -295,7 +297,7 @@ const RoomDetails = () => {
                                                         name='name'
                                                         disabled
                                                         defaultValue={user?.displayName}
-                                                        className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
+                                                        className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200  focus:ring-opacity-40  focus:outline-none focus:ring'
                                                     />
                                                 </div>
                                                 <div className="pt-2">
@@ -306,7 +308,7 @@ const RoomDetails = () => {
                                                         id='comment'
                                                         name='comment'
                                                         type='text'
-                                                        className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
+                                                        className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200   focus:ring-opacity-40  focus:outline-none focus:ring'
                                                     />
                                                 </div>
 

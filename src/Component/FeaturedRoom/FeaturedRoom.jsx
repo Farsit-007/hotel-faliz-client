@@ -89,7 +89,7 @@ const FeaturedRoom = () => {
                                     <div className=" text-center">
 
                                         <div className=" p-2 text-slate-300">
-                                            <p>{room.description}</p>
+                                            <p>{room.description.slice(0, 120)}....</p>
                                         </div>
                                     </div>
 
