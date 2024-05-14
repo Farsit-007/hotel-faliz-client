@@ -99,19 +99,19 @@ const Rooms = () => {
                                         />
                                         <div className="absolute inset-0  bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-500 hover:opacity-100">
                                             <div className="text-white text-center p-4">
-                                                <p className="text-lg font-bold">{room.name}</p>
+                                                <p className="text-2xl font-bold">{room.name}</p>
                                             </div>
                                         </div>
                                     </figure>
                                    
                                     <div className="absolute bottom-3 left-3">
-                                        <div className=" flex gap-1 items-center border-none  text-[#cfaf45] text-2xl font-bold">
+                                        <div className=" flex gap-1 items-center border-none  text-[#cfaf45] text-3xl font-bold">
                                          $ {room.price_per_night} || Night 
                                         </div>
                                     </div>
                                     <div className="absolute bottom-3 right-3">
-                                        <div className="badge flex gap-1 items-center badge-ghost bg-[#cfaf45] border-none font-semibold text-white text-md">
-                                        <MdReviews />  {room.Review_Count}
+                                        <div className="badge p-4 flex gap-2 items-center badge-ghost bg-[#cfaf4594] border-none font-semibold text-white text-2xl">
+                                        <MdReviews size={25}/>  {room.Review_Count}
                                         </div>
                                     </div>
                                 </div>
