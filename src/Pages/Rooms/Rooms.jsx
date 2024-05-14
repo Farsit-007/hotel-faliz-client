@@ -38,12 +38,8 @@ const Rooms = () => {
         getData(minPrice, maxPrice);
     };
 
-    const handleReset = (e) => {
-        e.preventDefault();
-        const minPrice = e.target.minPrice.value ='';
-        const maxPrice = e.target.maxPrice.value ='';
+    const handleReset = () => {
         getData(); 
-       
     };
 
     return (

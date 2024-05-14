@@ -77,7 +77,7 @@ const Review = () => {
                                             </div>
                                             <div className="mx-2">
                                                 <div className="flex gap-10 text-slate-300">
-                                                    <h1 className="font-semibold text-xl ">{rev.name}  </h1>
+                                                    <h1 className="font-semibold text-lg ">{rev.name}  </h1>
                                                     <p className="text-2xl text-[#cfaf45]">{new Date(rev.createdAt).toLocaleDateString()}</p>
                                                 </div>
                                                 <div className="flex items-center">
