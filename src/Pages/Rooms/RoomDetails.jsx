@@ -10,6 +10,7 @@ import { AuthContext } from "../../Component/AuthProvider/AuthProvider";
 import axios from "axios";
 import ReactStars from "react-rating-stars-component";
 import toast from 'react-hot-toast';
+import { Helmet } from "react-helmet-async";
 const RoomDetails = () => {
     const rooms = useLoaderData()
     const navigate = useNavigate()
@@ -85,6 +86,9 @@ const RoomDetails = () => {
 
     return (
         <div className="bg-[#18181b]">
+            <Helmet>
+                <title>HoTel FaLiz | Room Details</title>
+            </Helmet>
             <section className="">
                 <div className=" bg-cover max-h-[300px] bg-slate-50 " style={{ backgroundImage: `url(https://i.postimg.cc/HnPhy6QT/frame-from-plants-drawing-suplies.webp)` }}>
 

@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 const ContactUs = () => {
     const nameref = useRef();
     const emailref = useRef();
@@ -21,7 +22,9 @@ const ContactUs = () => {
    
     return (
         <div  className="bg-[#18181b]">
-          
+          <Helmet>
+                <title>HoTel FaLiz | Contact Us</title>
+            </Helmet>
             <div className="max-w-6xl py-28 mx-auto">
                 <section data-aos="fade-up"
                 data-aos-duration="1000" className="py-8  bg-[#cfaf4542] rounded-xl">

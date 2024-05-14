@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Component/AuthProvider/AuthProvider";
 import toast from 'react-hot-toast';
 import axios from 'axios'
+import { Helmet } from "react-helmet-async";
 const Login = () => {
     const { loginUser, googleLogin} = useContext(AuthContext);
     const [show, setShow] = useState(false)
@@ -53,7 +54,9 @@ const Login = () => {
 
     return (
         <div className="flex  pt-6 justify-center  items-center min-h-screen font-Meri w-full bg-cover" style={{ backgroundImage: `url(https://i.postimg.cc/kX25PqHb/tree-with-two-seasons-compared-scene-generative-ai.webp)` }}>
-              
+              <Helmet>
+                <title>HoTel FaLiz | Login</title>
+            </Helmet>
             <div className="flex justify-center  items-center min-h-screen">
                 <div className="flex text-white flex-col animate__animated animate__zoomIn bg-opacity-5 backdrop-blur-3xl bg-[#b7004f3d]  md:w-[450px] p-10 pb-4 pt-2 rounded-xl ">
                     <div className="mb-4 text-center border-b-2">

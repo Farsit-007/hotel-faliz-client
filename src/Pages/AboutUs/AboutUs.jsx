@@ -1,9 +1,11 @@
-
+import { Helmet } from "react-helmet-async";
 import { ScrollRestoration } from "react-router-dom";
 const AboutUs = () => {
     return (
         <div className="bg-[#18181b]">
-           
+            <Helmet>
+                <title>HoTel FaLiz | About Us</title>
+            </Helmet>
            <section className="">
                 <div className=" bg-cover max-h-[300px] bg-slate-50 " style={{ backgroundImage: `url(https://i.postimg.cc/HnPhy6QT/frame-from-plants-drawing-suplies.webp)` }}>
 

@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
-
+import { Helmet } from "react-helmet-async";
 const MyBooking = () => {
     const { user } = useContext(AuthContext);
     const [showModal, setShowModal] = useState(false);
@@ -73,6 +73,9 @@ const MyBooking = () => {
 
     return (
         <div className="bg-[#18181b]">
+            <Helmet>
+                <title>HoTel FaLiz | My Booking</title>
+            </Helmet>
             <>
                 {booking.length === 0 && (
                     <style>

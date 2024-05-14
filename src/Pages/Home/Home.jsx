@@ -5,6 +5,7 @@ import Map from "../../Component/Map/Map";
 import NewsLetter from "../../Component/NewsLetter/NewsLetter";
 import Review from "../../Component/Review/Review";
 import popup from '../../assets/Brown Simple Minimalist Hotel Promo Instagram Post.png'
+import { Helmet } from "react-helmet-async";
 const Home = () => {
     const [showModal, setShowModal] = useState(false);
     useEffect(() => {
@@ -21,6 +22,9 @@ const Home = () => {
 
     return (
         <div className="bg-[#18181b]">
+            <Helmet>
+                <title>HoTel FaLiz | Home</title>
+            </Helmet>
             <Banner></Banner>
             <FeaturedRoom></FeaturedRoom>
             <Map></Map>

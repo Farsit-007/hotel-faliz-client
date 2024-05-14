@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import {  MdReviews } from "react-icons/md";
 import { Link } from "react-router-dom";
 
@@ -45,6 +46,9 @@ const Rooms = () => {
 
     return (
         <div className="bg-[#18181b]">
+            <Helmet>
+                <title>HoTel FaLiz | Rooms</title>
+            </Helmet>
               <>
                 {rooms.length === 0 && (
                     <style>

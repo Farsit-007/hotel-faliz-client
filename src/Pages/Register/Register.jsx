@@ -6,6 +6,7 @@ import { ScrollRestoration } from "react-router-dom";
 import toast from 'react-hot-toast';
 import { AuthContext } from "../../Component/AuthProvider/AuthProvider";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 const Register = () => {
     const { createUser, profileUpdate } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -37,7 +38,9 @@ const Register = () => {
     }
     return (
         <div className="flex justify-center  items-center min-h-[700px] font-Meri w-full  bg-cover" style={{ backgroundImage: `url(https://i.postimg.cc/63W5QQWC/three-dimensional-tree-with-foliage.webp)` }}>
-
+<Helmet>
+                <title>HoTel FaLiz | Register</title>
+            </Helmet>
             <div className="flex justify-center items-center min-h-screen">
                 <div className="flex flex-col md:w-[450px] animate__animated animate__zoomIn mt-8 p-10 pb-4 pt-2 rounded-xl text-white bg-opacity-5 backdrop-blur-3xl bg-[#b7004f3d]">
                     <div className="mb-4 text-center border-b-2">
