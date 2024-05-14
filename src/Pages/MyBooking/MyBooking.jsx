@@ -14,7 +14,7 @@ const MyBooking = () => {
     const [Id, setId] = useState()
     const [startDate, setStartDate] = useState(new Date());
     const getData = async () => {
-        const { data } = await axios(`http://localhost:5000/booking/${user?.email}`,{withCredentials : true})
+        const { data } = await axios(`https://server-navy-two-99.vercel.app/booking/${user?.email}`,{withCredentials : true})
         setBooking(data)
     }
     useEffect(() => {
@@ -23,9 +23,9 @@ const MyBooking = () => {
 
     const handleDelete = async (id,id2) => {
         try {
-            const updateAvail = await axios.patch(`http://localhost:5000/bookingupdate/${id2}`,{availability : 'Available'})
+            const updateAvail = await axios.patch(`https://server-navy-two-99.vercel.app/bookingupdate/${id2}`,{availability : 'Available'})
             console.log(updateAvail);
-            const { data } = await axios.delete(`http://localhost:5000/bookingDelete/${id}`)
+            const { data } = await axios.delete(`https://server-navy-two-99.vercel.app/bookingDelete/${id}`)
            
             if (data.deletedCount > 0) {
                 Swal.fire({
@@ -62,7 +62,7 @@ const MyBooking = () => {
         const reDate = startDate.toLocaleDateString();
         const update = { reDate };
         try {
-            const { data2 } = await axios.patch(`http://localhost:5000/updatebooking/${Id}`, update)
+            const { data2 } = await axios.patch(`https://server-navy-two-99.vercel.app/updatebooking/${Id}`, update)
             getData();
             toast.success("Booking date updated successfully");
         } catch (err) {
@@ -72,7 +72,7 @@ const MyBooking = () => {
     }
 
     return (
-        <div>
+        <div className="bg-[#18181b]">
             <section className="">
                 <div className=" bg-cover max-h-[300px] bg-slate-50 " style={{ backgroundImage: `url(https://i.postimg.cc/HnPhy6QT/frame-from-plants-drawing-suplies.webp)` }}>
 
@@ -82,14 +82,15 @@ const MyBooking = () => {
                 </div>
             </section>
 
-            <div className="max-w-6xl mx-auto my-8">
+            <div className="max-w-6xl mx-auto py-8">
 
                 <div className="overflow-x-auto">
                     <table className="table section-no-cards">
                         <thead className="">
-                            <tr className="font-extrabold text-lg">
+                            <tr className="font-extrabold text-white border-[#cfaf45] text-lg">
                                 <th>Image</th>
                                 <th>Room</th>
+                                <th>Price</th>
                                 <th>Date</th>
                                 <th>Review</th>
                                 <th>Update</th>
@@ -98,7 +99,7 @@ const MyBooking = () => {
                         </thead>
                         {<tbody className="">
                             {booking.map((item) => (
-                                <tr key={item.id}>
+                                <tr key={item.id} className="border-[#cfaf45]">
                                     <td className="w-36 lg:w-52">
                                         <div className="w-36 lg:w-48">
                                             <figure className="rounded-xl" style={{ height: '110px', width: '100%', overflow: 'hidden' }}>
@@ -106,18 +107,19 @@ const MyBooking = () => {
                                             </figure>
                                         </div>
                                     </td>
-                                    <td className="w-36 lg:w-52"> {item.room}</td>
-                                    <td> {new Date(item.reDate).toLocaleDateString()}</td>
+                                    <td className=" text-white"> {item.room}</td>
+                                    <td className=" text-white"> $ {item.price}</td>
+                                    <td> <p className="text-white">{new Date(item.reDate).toLocaleDateString()}</p></td>
                                     <td>
                                         <Link to={`/roomsdetails/${item.roomId}`}>
-                                            <button>Review</button>
+                                            <button className="bg-transparent  text-lg font-bold border border-[#cfaf45] text-[#cfaf45]  flex gap-1 items-center hover:text-white hover:bg-[#cfaf45] p-1 transition-all duration-1000 ">Review</button>
                                         </Link>
                                     </td>
                                     <td className="">
-                                        <button onClick={() => handleUpdate(item._id)}>Update Date</button>
+                                        <button className="bg-transparent  text-lg font-bold border border-[#cfaf45] text-[#cfaf45]  flex gap-1 items-center hover:text-white hover:bg-[#cfaf45] p-1 transition-all duration-1000 " onClick={() => handleUpdate(item._id)}>Update Date</button>
                                     </td>
                                     <td className="">
-                                        <button onClick={() => handleDelete(item._id,item.roomId)}>Cancel</button>
+                                        <button className="bg-transparent  text-lg font-bold border border-[#cfaf45] text-[#cfaf45]  flex gap-1 items-center hover:text-white hover:bg-[#cfaf45] p-1 transition-all duration-1000 " onClick={() => handleDelete(item._id,item.roomId)}>Cancel</button>
                                     </td>
                                 </tr>
                             ))}

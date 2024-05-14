@@ -12,7 +12,7 @@ const FeaturedRoom = () => {
     const [rooms, setRooms] = useState([])
     useEffect(() => {
         const getData = async () => {
-            const { data } = await axios(`http://localhost:5000/featured-room`)
+            const { data } = await axios(`https://server-navy-two-99.vercel.app/featured-room`)
             setRooms(data)
         }
         getData()
@@ -44,7 +44,7 @@ const FeaturedRoom = () => {
     return (
         <div className='max-w-6xl mx-auto'>
             <div className="text-center my-10">
-                <h1 className="text-3xl md:text-5xl">Featured Rooms</h1>
+                <h1 className="text-3xl text-[#cfaf45] md:text-5xl">Featured Rooms</h1>
             </div>
 
             <Swiper
@@ -64,16 +64,16 @@ const FeaturedRoom = () => {
                     {
                         rooms.map(room => <SwiperSlide className='py-10 px-5 md:px-0' key={room._id}>
                             <div className="relative">
-                                <div className="card text-center flex flex-col gap-2 card-compact p-2 bg-base-100 shadow-xl">
+                                <div className=" text-center border flex flex-col gap-2  p-2 ">
                                     <div className="relative">
-                                        <figure className="rounded-xl" style={{ height: '250px', width: '100%', overflow: 'hidden' }}>
+                                        <figure className="" style={{ height: '250px', width: '100%', overflow: 'hidden' }}>
 
                                             <img
                                                 src={room.images}
                                                 alt={room.name}
                                                 className="block object-cover h-full w-full  transition-opacity duration-500 hover:opacity-75"
                                             />
-                                            <div className="absolute inset-0 rounded-xl bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-500 hover:opacity-100">
+                                            <div className="absolute inset-0  bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-500 hover:opacity-100">
                                                 <div className="text-white text-center p-4">
                                                     <p className="text-lg font-bold">{room.name}</p>
                                                 </div>
@@ -81,20 +81,20 @@ const FeaturedRoom = () => {
 
                                         </figure>
                                         <div className="absolute top-3 left-3">
-                                            <div className="badge badge-ghost bg-[#b70050] border-none font-semibold text-white text-md "><MdOutlineSell /> {room.price_per_night}  || Night</div>
+                                            <div className="badge badge-ghost bg-[#cfaf45] border-none font-semibold text-white text-md "><MdOutlineSell /> {room.price_per_night}  || Night</div>
                                         </div>
                                     </div>
 
                                     <div className=" text-center">
 
-                                        <div className=" p-2">
+                                        <div className=" p-2 text-slate-300">
                                             <p>{room.description}</p>
                                         </div>
                                     </div>
 
-                                    <div className="card-actions justify-center my-2 items-end mr-3">
+                                    <div className="card-actions justify-center w-full my-2 items-end mr-3">
                                         <Link  to={`/roomsdetails/${room._id}`}>
-                                            <button className="bg-transparent text-lg font-bold border border-[#b70050] text-[#b70050] rounded-md p-2 flex gap-1 items-center hover:text-white hover:bg-[#b70050] transition-all duration-1000">
+                                            <button className="bg-transparent  text-lg font-bold border border-[#cfaf45] text-[#cfaf45]  p-2 flex gap-1 items-center hover:text-white hover:bg-[#cfaf45] transition-all duration-1000">
                                                 Book Now
                                             </button>
                                         </Link>

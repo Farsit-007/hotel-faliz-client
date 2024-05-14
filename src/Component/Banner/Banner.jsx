@@ -1,9 +1,10 @@
 
+import { Link } from 'react-router-dom';
 import backgroundVideo from '../../assets/bv.mp4';
 
 const Banner = () => {
     return (
-        <div className='w-full flex justify-start items-center min-h-screen'>
+        <div className='w-full font-Cormorant flex justify-start items-center min-h-screen'>
             <video
                 autoPlay
                 loop
@@ -13,13 +14,13 @@ const Banner = () => {
                 <source src={backgroundVideo} type='video/mp4' />
             </video>
             <div className='w-11/12 md:w-4/5 mx-auto z-10 flex flex-col-reverse md:flex-row gap-12 items-center text-center text-white'>
-                <div>
+                <div className=' lg:w-[65%] mx-auto'>
                     <h1 className='text-2xl md:text-4xl font-bold mb-4'>
-                        Let Your Creativity Flourish with Our Extensive Selection of Artistic Treasures.
+                    Choose from a diverse range of hotels, each celebrated for its distinct character and aesthetic allure.
                     </h1>
-                    <button className='bg-white text-black px-6 py-3 rounded-lg font-bold hover:bg-gray-200 transition duration-300'>
+                    <Link to='/rooms' className='border mt-5 bg-transparent animate__animated  animate__fadeInLeft border-white py-2 px-4 font-bold text-white  hover:bg-[#b70050] transition-all duration-1000'>
                         View All Items
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

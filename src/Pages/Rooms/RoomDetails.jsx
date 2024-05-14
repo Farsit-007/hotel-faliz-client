@@ -30,6 +30,7 @@ const RoomDetails = () => {
         const roomId = _id;
         const room = form.room.value;
         const email = user?.email;
+        const price = price_per_night;
         const bookDetails = {
             images: images,
             name: name,
@@ -37,10 +38,11 @@ const RoomDetails = () => {
             roomId,
             email,
             room,
+            price
         }
         try {
-            const { data } = await axios.post(`http://localhost:5000/booking`, bookDetails)
-            const { data2 } = await axios.patch(`http://localhost:5000/booking/${_id}`, { availability: 'Unavailable' })
+            const { data } = await axios.post(`https://server-navy-two-99.vercel.app/booking`, bookDetails)
+            const { data2 } = await axios.patch(`https://server-navy-two-99.vercel.app/booking/${_id}`, { availability: 'Unavailable' })
             setShowModal(true);
             setBookingCompleted(true)
         } catch (err) {
@@ -72,7 +74,7 @@ const RoomDetails = () => {
         const email = user?.email;
         const review = { name, comment, ratings, roomId, email, images: user?.photoURL }
         try {
-            const { data } = await axios.post(`http://localhost:5000/review`, review)
+            const { data } = await axios.post(`https://server-navy-two-99.vercel.app/review`, review)
             toast.success("Booking date updated successfully");
         } catch (err) {
             toast.error(err.response.data);
@@ -80,7 +82,7 @@ const RoomDetails = () => {
     }
 
     return (
-        <div>
+        <div className="bg-[#18181b]">
             <section className="">
                 <div className=" bg-cover max-h-[300px] bg-slate-50 " style={{ backgroundImage: `url(https://i.postimg.cc/HnPhy6QT/frame-from-plants-drawing-suplies.webp)` }}>
 
@@ -90,7 +92,7 @@ const RoomDetails = () => {
                 </div>
             </section>
 
-            <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto my-10">
+            <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto py-10">
                 <div className="col-span-3 lg:col-span-2">
                     <div>
                         <figure className="" style={{ height: '400px', width: '100%', overflow: 'hidden' }}>
@@ -101,18 +103,18 @@ const RoomDetails = () => {
                         </figure>
                     </div>
                     <div className="pt-5">
-                        <h1 className="">LUXURY ROOM</h1>
+                        <h1 className="text-xl text-[#cfaf45]">LUXURY ROOM</h1>
                     </div>
-                    <div className="">
-                        <h1 className="text-3xl py-2 font-bold">{name}</h1>
-                        <p className="font-medium text-[16px]">{description}</p>
+                    <div className="py-8">
+                        <h1 className="text-3xl py-2 text-white font-bold">{name}</h1>
+                        <p className="font-medium text-slate-300 text-[16px]">{description}</p>
                     </div>
-                    <div>
+                    <div className="py-8">
                         <div className="overflow-x-auto">
-                            <table className="table ">
+                            <table className="table text-white">
                                 <tbody >
 
-                                    <tr className=''>
+                                    <tr className='border-[#cfaf45]'>
 
                                         <th>Price per Night </th>
                                         <td>:</td>
@@ -120,7 +122,7 @@ const RoomDetails = () => {
 
                                     </tr >
 
-                                    <tr className=''>
+                                    <tr className='border-[#cfaf45]'>
 
                                         <th>Room Size</th>
                                         <td>:</td>
@@ -128,7 +130,7 @@ const RoomDetails = () => {
 
                                     </tr>
 
-                                    <tr className=''>
+                                    <tr className='border-[#cfaf45]'>
 
                                         <th>Availability</th>
                                         <td>:</td>
@@ -136,12 +138,12 @@ const RoomDetails = () => {
 
 
                                     </tr>
-                                    <tr className=''>
+                                    <tr className='border-[#cfaf45]'>
                                         <th>Special Offers</th>
                                         <td>:</td>
                                         <td>{special_offers}</td>
                                     </tr>
-                                    <tr className=''>
+                                    <tr className='border-[#cfaf45]'>
 
                                         <th>Review</th>
                                         <td>:</td>
@@ -152,43 +154,43 @@ const RoomDetails = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col md:flex-row md:items-center gap-5 md:gap-28">
+                    <div className="flex flex-col py-8 md:flex-row md:items-center gap-5 md:gap-28">
                         <div>
-                            <div className="pt-5 flex gap-4 items-center">
+                            <div className="pt-5 flex gap-4 items-center text-4xl  text-[#cfaf45]">
                                 <CiLogin />
-                                <h1 className="text-2xl font-bold">Check In</h1>
+                                <h1 className="text-4xl font-bold">Check In</h1>
                             </div>
-                            <div className="py-3">
-                                <p className="flex gap-2 items-center"><FaCaretRight /> Check-in from 9:00 AM - anytime</p>
-                                <p className="flex gap-2 items-center"><FaCaretRight /> Early check-in subject to availability</p>
+                            <div className="py-5">
+                                <p className="flex gap-2 items-center text-slate-300"><FaCaretRight className="text-[#cfaf45]"/> Check-in from 9:00 AM - anytime</p>
+                                <p className="flex gap-2 items-center text-slate-300"><FaCaretRight className="text-[#cfaf45]"/> Early check-in subject to availability</p>
                             </div>
                         </div>
                         <div>
-                            <div className="pt-5 flex gap-4 items-center">
+                            <div className="pt-5 flex gap-4 items-center text-4xl  text-[#cfaf45]">
                                 <CiLogout />
-                                <h1 className="text-2xl font-bold">Check Out</h1>
+                                <h1 className=" font-bold text-4xl  ">Check Out</h1>
                             </div>
-                            <div className="py-3">
-                                <p className="flex gap-2 items-center"><FaCaretRight /> Check-out before noon</p>
-                                <p className="flex gap-2 items-center"><FaCaretRight /> Check-out from 9:00 AM - anytime</p>
+                            <div className="py-5">
+                                <p className="flex gap-2 items-center text-slate-300"><FaCaretRight className="text-[#cfaf45]"/> Check-out before noon</p>
+                                <p className="flex gap-2 items-center text-slate-300"><FaCaretRight className="text-[#cfaf45]"/> Check-out from 9:00 AM - anytime</p>
                             </div>
                         </div>
                     </div>
 
                 </div>
-                <div className="col-span-3 lg:col-span-1">
+                <div className="col-span-3 lg:col-span-1 bg-[#26262b]">
                     <div>
                         <div className="p-5">
-                            <h1 className="">Your Reservation </h1>
+                            <h1 className="text-4xl font-bold text-[#cfaf45]">Your Reservation </h1>
                             <div className="mt-4">
                                 <form onSubmit={handlebook}>
                                     <div className='flex flex-col gap-2 '>
-                                        <label className='text-gray-700'>Reserve Date</label>
+                                        <label className='text-slate-300'>Reserve Date</label>
 
                                         <DatePicker className="border p-2 w-full " selected={startDate} onChange={(date) => setStartDate(date)} />
                                     </div>
                                     <div className='flex flex-col gap-2 '>
-                                        <label className='text-gray-700 ' htmlFor='room'>
+                                        <label className='text-slate-300 ' htmlFor='room'>
                                             Rooms
                                         </label>
                                         <select
@@ -203,37 +205,37 @@ const RoomDetails = () => {
                                         </select>
                                     </div>
                                     <div className='mt-6'>
-                                        <button className='px-8 py-2.5 leading-5 w-full text-white transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
+                                        <button className='bg-transparent w-full  text-lg font-bold border border-[#cfaf45] text-[#cfaf45] justify-center p-2 flex gap-1 items-center hover:text-white hover:bg-[#cfaf45] transition-all duration-1000'>
                                             Book Now
                                         </button>
                                     </div>
                                 </form>
                             </div>
                             {showModal && (
-                                <div className="fixed inset-0 z-10 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
-                                    <div className="relative w-auto max-w-md p-6 my-8 mx-auto bg-white rounded-md shadow-lg">
+                                <div className="fixed  inset-0 z-10 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
+                                    <div className="relative w-auto max-w-md p-6 my-8 mx-auto bg-[#18181b] border rounded-sm">
                                         <div className="text-center">
-                                            <h3 className="text-lg font-semibold leading-6 text-gray-900">Reservations Details</h3>
+                                            <h3 className="text-lg font-semibold leading-6 text-slate-300">Reservations Details</h3>
                                             <div className="overflow-x-auto">
                                                 <table className="table">
-                                                    <tbody>
+                                                    <tbody className="text-slate-300">
                                                         {/* row 1 */}
-                                                        <tr>
+                                                        <tr className='border-[#cfaf45]'>
                                                             <th>Customer Name </th>
                                                             <th>:</th>
                                                             <td>{user?.displayName}</td>
                                                         </tr>
-                                                        <tr>
+                                                        <tr className='border-[#cfaf45]'>
                                                             <th>Price  </th>
                                                             <th>:</th>
-                                                            <td>{price_per_night}</td>
+                                                            <td>$ {price_per_night}</td>
                                                         </tr>
-                                                        <tr>
+                                                        <tr className='border-[#cfaf45]'>
                                                             <th>Reservation Date</th>
                                                             <th>:</th>
                                                             <td>{startDate.toLocaleDateString()}</td>
                                                         </tr>
-                                                        <tr>
+                                                        <tr className='border-[#cfaf45]'>
                                                             <th>Description</th>
                                                             <th>:</th>
                                                             <td>{description}</td>
@@ -246,7 +248,7 @@ const RoomDetails = () => {
                                         <div className="mt-4 text-center">
                                             <button
                                                 onClick={closeModal}
-                                                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none focus:bg-gray-300"
+                                                className="bg-transparent w-full justify-center text-lg font-bold border border-[#cfaf45] text-[#cfaf45]  p-2 flex gap-1 items-center hover:text-white hover:bg-[#cfaf45] px-4 transition-all duration-1000 rounded"
                                             >
                                                 Confirmed Booking
                                             </button>
@@ -255,23 +257,23 @@ const RoomDetails = () => {
                                 </div>
                             )}
                             <div className="my-5">
-                                <h1 className="text-2xl">
+                                <h1 className="text-2xl text-[#cfaf45]">
                                     Amenities
                                 </h1>
-                                <div className="space-y-4 pt-4">
-                                    <p className="flex items-center gap-3 border-b pb-2"> <IoPeopleCircleOutline />2 - 5 Persons</p>
-                                    <p className="flex items-center gap-3 border-b pb-2"><FaWifi />Free WiFi Available</p>
-                                    <p className="flex items-center gap-3 border-b pb-2"><MdPool />Swimming Pools</p>
-                                    <p className="flex items-center gap-3 border-b pb-2"><MdFreeBreakfast />Breakfast</p>
-                                    <p className="flex items-center gap-3 border-b pb-2"><MdOutlineBedroomParent />250 SQFT Rooms</p>
-                                    <p className="flex items-center gap-3 border-b pb-2"><FaDumbbell />Gym facilities</p>
+                                <div className="space-y-4 pt-4 text-white">
+                                    <p className="flex items-center gap-3 border-b border-[#cfaf45] pb-2"> <IoPeopleCircleOutline />2 - 5 Persons</p>
+                                    <p className="flex items-center gap-3 border-b border-[#cfaf45] pb-2"><FaWifi />Free WiFi Available</p>
+                                    <p className="flex items-center gap-3 border-b border-[#cfaf45] pb-2"><MdPool />Swimming Pools</p>
+                                    <p className="flex items-center gap-3 border-[#cfaf45] border-b pb-2"><MdFreeBreakfast />Breakfast</p>
+                                    <p className="flex items-center gap-3 border-[#cfaf45] border-b pb-2"><MdOutlineBedroomParent />250 SQFT Rooms</p>
+                                    <p className="flex border-[#cfaf45] items-center gap-3 border-b pb-2"><FaDumbbell />Gym facilities</p>
                                 </div>
                             </div>
                             <div>
 
-                                <div className="flex flex-col max-w-xl p-8 shadow-sm rounded-xl lg:p-12 dark:bg-gray-50 dark:text-gray-800">
+                                <div className="flex flex-col max-w-xl p-8  rounded-xl lg:p-12 ">
                                     <div className="flex flex-col items-center w-full">
-                                        <h2 className="text-3xl font-semibold text-center">Your opinion</h2>
+                                        <h2 className="text-3xl font-semibold text-white text-center">Your opinion</h2>
                                         <div className="flex flex-col items-center space-y-3">
 
                                             <ReactStars
@@ -284,7 +286,7 @@ const RoomDetails = () => {
                                         <div className="flex flex-col w-full">
                                             <form onSubmit={handleReview}>
                                                 <div>
-                                                    <label className='text-gray-700 ' htmlFor='name'>
+                                                    <label className='text-white ' htmlFor='name'>
                                                         Name
                                                     </label>
                                                     <input
@@ -297,7 +299,7 @@ const RoomDetails = () => {
                                                     />
                                                 </div>
                                                 <div className="pt-2">
-                                                    <label className='text-gray-700 ' htmlFor='comment'>
+                                                    <label className='text-white ' htmlFor='comment'>
                                                         Comment
                                                     </label>
                                                     <input
@@ -308,7 +310,7 @@ const RoomDetails = () => {
                                                     />
                                                 </div>
 
-                                                <button className="py-4 my-8 w-full font-semibold rounded-md dark:text-gray-50 dark:bg-violet-600">Leave feedback</button>
+                                                <button className="bg-transparent mt-5 w-full justify-center text-lg font-bold border border-[#cfaf45] text-[#cfaf45]  p-2 flex gap-1 items-center hover:text-white hover:bg-[#cfaf45] px-4 transition-all duration-1000 ">Leave feedback</button>
                                             </form>
                                         </div>
                                     </div>

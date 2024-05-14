@@ -26,7 +26,7 @@ const Register = () => {
         try {
             const result = await createUser(userEmail, userPassword)
             await profileUpdate(userName, userPhoto)
-            const { data } = await axios.post(`http://localhost:5000/jwt`, { email: result?.user?.email }, { withCredentials: true })
+            const { data } = await axios.post(`https://server-navy-two-99.vercel.app/jwt`, { email: result?.user?.email }, { withCredentials: true })
             console.log(data);
             toast.success("Sign In")
             navigate(location.state ? location.state : '/')

@@ -20,8 +20,9 @@ const Home = () => {
     };
 
     return (
-        <div >
+        <div className="bg-[#18181b]">
             <Banner></Banner>
+            <FeaturedRoom></FeaturedRoom>
             <Map></Map>
             {showModal && (
                 <div className="fixed inset-0 z-10 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
@@ -36,8 +37,9 @@ const Home = () => {
                     </div>
                 </div>
             )}
+            
             <NewsLetter></NewsLetter>
-            <FeaturedRoom></FeaturedRoom>
+            
             <Review></Review>
         </div>
     );

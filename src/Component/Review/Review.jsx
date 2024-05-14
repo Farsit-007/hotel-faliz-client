@@ -12,7 +12,7 @@ const Review = () => {
     const [revs, setRev] = useState([])
     useEffect(() => {
         const getData = async () => {
-            const { data } = await axios(`http://localhost:5000/allreview`)
+            const { data } = await axios(`https://server-navy-two-99.vercel.app/allreview`)
             setRev(data)
         }
         getData()
@@ -43,14 +43,16 @@ const Review = () => {
         <div className="max-w-6xl mx-auto">
             <section className="">
                 <div className="container px-6 py-10 mx-auto">
-                    <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
-                        What our <span className="text-blue-500">clients</span> say
+                    <div className="py-8 my-8">
+                    <h1 className="text-2xl font-semibold text-center text-[#cfaf45] capitalize lg:text-3xl ">
+                        What our clients say
                     </h1>
 
-                    <p className="max-w-2xl mx-auto mt-6 text-center ">
+                    <p className="max-w-2xl mx-auto text-slate-300 mt-6 text-center ">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error
                         alias, adipisci rem similique, at omnis eligendi optio eos harum.
                     </p>
+                    </div>
                     <Swiper
 
                         breakpoints={breakpoints}
@@ -64,18 +66,18 @@ const Review = () => {
                         className="mySwiper"
                     >
 
-                        <div className='grid max-w-6xl mx-auto grid-cols-1 md:grid-cols-2 gap-4 mt-8'>
+                        <div className='grid text-slate-300 max-w-6xl mx-auto grid-cols-1 md:grid-cols-2 gap-4 mt-8'>
                             {
                                 revs.map(rev => <SwiperSlide className='py-10 px-5 md:px-0' key={rev._id}>
 
                                     <div className="pl-4 rounded-lg ">
                                         <div className="flex items-center gap-3 my-2 -mx-2">
-                                            <div className="w-[45px] cursor-pointer rounded-full ring ring-[#b70050] ring-offset-base-100 ring-offset-2">
+                                            <div className="w-[45px] cursor-pointer rounded-full ring ring-[#cfaf45] ring-offset-base-100 ring-offset-2">
                                                 <img className="w-full rounded-full" src={rev.images || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
                                             </div>
                                             <div className="mx-2">
-                                                <div className="flex gap-10">
-                                                    <h1 className="font-semibold ">{rev.name}  </h1>
+                                                <div className="flex gap-10 text-slate-300">
+                                                    <h1 className="font-semibold  ">{rev.name}  </h1>
                                                     <p>{new Date(rev.createdAt).toLocaleDateString()}</p>
                                                 </div>
                                                 <div className="flex items-center">
@@ -89,13 +91,11 @@ const Review = () => {
                                             <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
                                             <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
                                         </svg>
-                                        <p className=" text-center py-1 text-lg italic">{rev.comment}</p>
+                                        <p className=" text-center text-slate-300 py-1 text-lg italic">{rev.comment}</p>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute bottom-0 right-0 w-8 h-8 dark:text-gray-300">
                                             <path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
                                             <path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
                                         </svg>
-
-
                                     </div>
                                 </SwiperSlide>)
                             }
