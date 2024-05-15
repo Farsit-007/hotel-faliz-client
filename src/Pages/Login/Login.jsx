@@ -15,7 +15,6 @@ const Login = () => {
         register,
         handleSubmit,
         formState: { errors },
-        reset,
     } = useForm()
 
     const togglePasswordVisibility = () => {
@@ -28,7 +27,7 @@ const Login = () => {
             const result =  await loginUser(userEmail,userPassword)
             const {data} = await axios.post(`https://server-navy-two-99.vercel.app/jwt`,{email : result?.user?.email},{withCredentials:true})
               console.log(data);
-             toast.success("Sign In")
+             toast.success("Welcome to HoTel FaLiz")
                navigate('/')
            } catch(error){
                if(error){
@@ -41,7 +40,7 @@ const Login = () => {
             const result =  await googleLogin();
             const {data} = await axios.post(`https://server-navy-two-99.vercel.app/jwt`,{email : result?.user?.email},{withCredentials:true})
             console.log(data);
-            toast.success("Sign In")
+            toast.success("Welcome to HoTel FaLiz")
              navigate(location.state ? location.state : '/')
          }catch(error){
           if(error){

@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { MdReviews } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, ScrollRestoration } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
@@ -129,6 +129,7 @@ const Rooms = () => {
 
 
             </>
+            <ScrollRestoration />
         </div>
     );
 };
