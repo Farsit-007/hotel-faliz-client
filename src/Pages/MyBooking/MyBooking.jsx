@@ -150,18 +150,18 @@ const MyBooking = () => {
 
 
 
-                        {showModal && (
-                            <div className="fixed inset-0 z-10 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
-                                <div className="relative w-auto max-w-md p-6 py-8 mx-auto bg-white rounded-md shadow-lg">
+                        {showModal && ( 
+                            <div className="fixed  inset-0 z-10 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
+                                <div className="relative bg-[#18181b] w-auto max-w-md p-6 py-8 mx-auto  border border-[#cfaf45]">
                                     <div className="text-center">
-                                        <h3 className="text-lg py-4 font-semibold leading-6 text-gray-900">Reservations Date</h3>
+                                        <h3 className="text-2xl py-4 font-semibold leading-6 text-[#cfaf45]">Reservations Date</h3>
                                         <form onSubmit={handleConfirm}>
                                             <div className='flex flex-col gap-2 '>
-                                                <DatePicker className="border p-2 w-full " selected={startDate} onChange={(date) => setStartDate(date)} />
+                                                <DatePicker className="border p-2 text-xl w-full " selected={startDate} onChange={(date) => setStartDate(date)} />
                                             </div>
                                             <div className="mt-4 text-center">
                                                 <button
-                                                    className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none focus:bg-gray-300"
+                                                    className="bg-transparent w-full text-lg font-bold border border-[#cfaf45] justify-center text-[#cfaf45]  flex gap-1 items-center hover:text-white hover:bg-[#cfaf45] p-1 transition-all duration-1000 "
                                                 >
                                                     Update Reservation
                                                 </button>
