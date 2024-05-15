@@ -11,11 +11,12 @@ import 'aos/dist/aos.css';
 AOS.init();
 const FeaturedRoom = () => {
     const [rooms, setRooms] = useState([])
-    
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         const getData = async () => {
             const { data } = await axios(`https://server-navy-two-99.vercel.app/featured-room`)
             setRooms(data)
+            setLoading(false);
         }
         getData()
     }, [])
@@ -45,7 +46,7 @@ const FeaturedRoom = () => {
 
     return (
         <div data-aos="fade-up"
-        data-aos-duration="1000"  className='max-w-6xl mx-auto'>
+            data-aos-duration="1000" className='max-w-6xl mx-auto'>
             <div className="text-center my-10">
                 <h1 className="text-3xl text-[#cfaf45] md:text-5xl">Featured Rooms</h1>
             </div>
@@ -63,51 +64,61 @@ const FeaturedRoom = () => {
                 className="mySwiper"
             >
 
-                <div className='grid max-w-6xl mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8'>
-                    {
-                        rooms.filter(room1 => room1.availability === 'Available').map(room => <SwiperSlide className='py-10 px-5 md:px-0' key={room._id}>
-                            <div className="relative">
-                                <div className=" text-center border flex flex-col gap-2  p-2 ">
-                                    <div className="relative">
-                                        <figure className="" style={{ height: '250px', width: '100%', overflow: 'hidden' }}>
 
-                                            <img
-                                                src={room.images}
-                                                alt={room.name}
-                                                className="block object-cover h-full w-full  transition-opacity duration-500 hover:opacity-75"
-                                            />
-                                            <div className="absolute inset-0  bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-500 hover:opacity-100">
-                                                <div className="text-white text-center p-4">
-                                                    <p className="text-xl font-bold">{room.name}</p>
+
+                {loading ? (
+                    <div className="flex flex-col justify-start items-center ">
+                        <span className="loading loading-spinner loading-lg"></span>
+                        <div className="spinner-border text-[#b70050]"></div>
+                    </div>
+                ) : (
+                    <div className='grid max-w-6xl mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8'>
+                        {
+                            rooms.filter(room1 => room1.availability === 'Available').map(room => <SwiperSlide className='py-10 px-5 md:px-0' key={room._id}>
+                                <div className="relative">
+                                    <div className=" text-center border flex flex-col gap-2  p-2 ">
+                                        <div className="relative">
+                                            <figure className="" style={{ height: '250px', width: '100%', overflow: 'hidden' }}>
+
+                                                <img
+                                                    src={room.images}
+                                                    alt={room.name}
+                                                    className="block object-cover h-full w-full  transition-opacity duration-500 hover:opacity-75"
+                                                />
+                                                <div className="absolute inset-0  bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-500 hover:opacity-100">
+                                                    <div className="text-white text-center p-4">
+                                                        <p className="text-xl font-bold">{room.name}</p>
+                                                    </div>
                                                 </div>
+
+                                            </figure>
+                                            <div className="absolute top-3 left-3">
+                                                <div className="badge badge-ghost p-4 bg-[#cfaf45] border-none font-semibold text-white text-lg ">$ {room.price_per_night}  || Night</div>
                                             </div>
+                                        </div>
 
-                                        </figure>
-                                        <div className="absolute top-3 left-3">
-                                            <div className="badge badge-ghost p-4 bg-[#cfaf45] border-none font-semibold text-white text-lg ">$ {room.price_per_night}  || Night</div>
+                                        <div className=" text-center">
+
+                                            <div className=" text-lg p-2 text-slate-300">
+                                                <p>{room.description.slice(0, 120)}....</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="card-actions justify-center w-full my-2 items-end mr-3">
+                                            <Link to={`/roomsdetails/${room._id}`}>
+                                                <button className="bg-transparent  text-lg font-bold border border-[#cfaf45] text-[#cfaf45]  p-2 flex gap-1 items-center hover:text-white hover:bg-[#cfaf45] transition-all duration-1000">
+                                                    Book Now
+                                                </button>
+                                            </Link>
                                         </div>
                                     </div>
 
-                                    <div className=" text-center">
-
-                                        <div className=" text-lg p-2 text-slate-300">
-                                            <p>{room.description.slice(0, 120)}....</p>
-                                        </div>
-                                    </div>
-
-                                    <div className="card-actions justify-center w-full my-2 items-end mr-3">
-                                        <Link  to={`/roomsdetails/${room._id}`}>
-                                            <button className="bg-transparent  text-lg font-bold border border-[#cfaf45] text-[#cfaf45]  p-2 flex gap-1 items-center hover:text-white hover:bg-[#cfaf45] transition-all duration-1000">
-                                                Book Now
-                                            </button>
-                                        </Link>
-                                    </div>
                                 </div>
+                            </SwiperSlide>)
+                        }
+                    </div>
 
-                            </div>
-                        </SwiperSlide>)
-                    }
-                </div>
+                )}
 
             </Swiper>
         </div>

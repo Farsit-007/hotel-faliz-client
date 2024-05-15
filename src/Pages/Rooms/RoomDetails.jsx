@@ -1,5 +1,5 @@
 import { CiLogin, CiLogout } from "react-icons/ci";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { ScrollRestoration, useLoaderData, useNavigate } from "react-router-dom";
 import { FaCaretRight, FaDumbbell, FaWifi } from "react-icons/fa6";
 import DatePicker from "react-datepicker";
 import { useContext, useEffect, useRef, useState } from "react";
@@ -114,7 +114,7 @@ const RoomDetails = () => {
                 </div>
             </section>
 
-            <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto py-10">
+            <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto px-5 lg:px-0 py-10">
                 <div className="col-span-3 lg:col-span-2">
                     <div data-aos="fade-up"
                 data-aos-duration="1000">
@@ -301,10 +301,10 @@ const RoomDetails = () => {
                             <div>
 
                                 <div  data-aos="fade-up"
-                data-aos-duration="1000" className="flex flex-col max-w-xl p-8  rounded-xl lg:p-12 ">
+                data-aos-duration="1000" className="flex flex-col  max-w-xl p-8  rounded-xl lg:p-12 ">
                                     <div className="flex flex-col items-center w-full">
                                         <h2 className="text-3xl font-semibold text-[#cfaf45] text-center">Leave a feedback</h2>
-                                        <div className="flex flex-col items-center space-y-3">
+                                        <div className="flex flex-col  items-center space-y-3">
 
                                             <ReactStars
                                                 count={5}
@@ -351,6 +351,7 @@ const RoomDetails = () => {
                     </div>
                 </div>
             </div>
+            <ScrollRestoration />
         </div>
     );
 };
