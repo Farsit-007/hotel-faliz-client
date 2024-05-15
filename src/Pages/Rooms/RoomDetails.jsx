@@ -79,6 +79,10 @@ const RoomDetails = () => {
 
     const handleReview = async (e) => {
         e.preventDefault()
+        if (!user) {
+            navigate('/login')
+            return;
+        }
         if (!bookingCompleted) {
             toast.error("Please complete your booking first.");
             return;

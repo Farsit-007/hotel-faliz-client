@@ -45,6 +45,7 @@ const MyBooking = () => {
                             text: "Your reservation has been Cancelled!.",
                             icon: "success"
                         });
+                        localStorage.setItem("bookingCompleted", JSON.stringify(false));
                         getData()
                     }
                 });
