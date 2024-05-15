@@ -6,3 +6,29 @@
   background-color: #05030a4d;
   z-index: 50;
 }
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: transparent; /* Initial color of the line */
+  transition: width 0.3s ease, background-color 0.3s ease; /* Transition width and color change */
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%; /* Expand the width to 100% on hover or when active */
+  background-color: #cfaf45; /* Color of the line on hover or when active */
+
+}
+
+
+

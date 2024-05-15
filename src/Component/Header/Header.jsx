@@ -16,16 +16,16 @@ const Header = () => {
         }
     })
     const Links = < >
-        <li className="text-lg font-bold"><NavLink to='/'>Home</NavLink></li>
-        <li className="text-lg font-bold"><NavLink to='/rooms' >Rooms</NavLink></li>
+        <li className="text-lg mr-2 font-bold"><NavLink to='/' className={({ isActive }) => isActive ? 'text-[#cfaf45]  focus:text-[#cfaf45] nav-link  font-bold ' : 'nav-link '}>Home</NavLink></li>
+        <li className="text-lg mr-2  font-bold"><NavLink to='/rooms' className={({ isActive }) => isActive ? 'text-[#cfaf45]  focus:text-[#cfaf45] nav-link  font-bold ' : 'nav-link '}>Rooms</NavLink></li>
         {
             user &&
             <>
-                <li className="text-lg font-bold"><NavLink to='/mybooking'   >My Bookings</NavLink></li>
+                <li className="text-lg mr-2  font-bold"><NavLink to='/mybooking'  className={({ isActive }) => isActive ? 'text-[#cfaf45]  focus:text-[#cfaf45] nav-link  font-bold ' : 'nav-link '}>My Bookings</NavLink></li>
             </>
         }
-        <li className="text-lg font-bold"><NavLink to='/aboutus'   >About Us</NavLink></li>
-        <li className="text-lg font-bold"><NavLink to='/contact'   >Contact Us</NavLink></li>        
+        <li className="text-lg mr-2  font-bold"><NavLink to='/aboutus'  className={({ isActive }) => isActive ? 'text-[#cfaf45]  focus:text-[#cfaf45] nav-link  font-bold ' : 'nav-link '}>About Us</NavLink></li>
+        <li className="text-lg mr-2  font-bold"><NavLink to='/contact'   className={({ isActive }) => isActive ? 'text-[#cfaf45]  focus:text-[#cfaf45] nav-link  font-bold ' : 'nav-link '}>Contact Us</NavLink></li>        
         
     </>
     const handleLogout = () => {

@@ -241,7 +241,7 @@ const RoomDetails = () => {
                             </div>
                             {showModal && (
                                 <div className="fixed  inset-0 z-10 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
-                                    <div className="relative w-auto max-w-md p-6 my-8 mx-auto bg-[#18181b] border rounded-sm">
+                                    <div className="relative w-auto max-w-md p-6 my-8 mx-auto bg-[#18181b] border border-[#cfaf45] rounded-sm">
                                         <div className="text-center">
                                             <h3 className="text-3xl font-bold text-[#cfaf45]  leading-6 ">Reservations Details</h3>
                                             <div className="overflow-x-auto ">
