@@ -4,7 +4,8 @@
 # Website Category -> Hotel Booking Website
 
 # Overview
- • Modern and Intuitive Interface:
+ • Modern and Intuitive Interface: 
+ <br/>
    =>The website boasts a sleek, responsive design optimized for various devices, ensuring a seamless user experience on mobile, tablet, and 
       desktop. <br/>
    =>Utilizes cutting-edge frontend technologies like React.js, HTML, CSS, and JavaScript for a visually engaging and interactive interface. <br/>
