@@ -30,5 +30,42 @@
    => Provides users with a personalized "My Bookings" page for managing booked rooms. <br/>
    => Enables easy booking modifications, including date updates and cancellations, with intuitive prompts and notifications. <br/>
 
+ # Major Features :
+  • Reviewa Systems <br/>
+  • Room Bookings <br/>
+  • hotels Locations <br/>
 
+ # Technologies : 
+  • React.js <br/>
+  • Tailwind.css <br/>
+  • Firebase  <br/>
+  • React-router-dom <br/>
+  • Node.js <br/>
+  • Express.js <br/>
+  • MongoDb <br/>
+   
+  ### Setup .env file
+
+   ```js
+
+VITE_APIKEY = ...
+VITE_AUTHDOMAIN = ...
+VITE_PROJECTID = ...
+VITE_STORAGEBUCKET = ...
+VITE_MESSAGINGSENDERID = ...
+VITE_APPID = ...
+
+```
+
+### Install NPM
+
+```shell
+npm i
+```
+
+### Run the Project
+
+```shell
+npm run dev
+``` 
 
