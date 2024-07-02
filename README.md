@@ -1,5 +1,6 @@
 # Website Name -> HoTel FaLiz
-# Live Link ->  https://assignment-11-5a8b0.web.app/
+# [Live Link] (https://assignment-11-5a8b0.web.app/)
+# [Server Repository] (https://github.com/Farsit-007/Assignment-11-Server)
 # Website Category -> Hotel Booking Website
 
  • Modern and Intuitive Interface:
@@ -29,5 +30,3 @@
 
 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
