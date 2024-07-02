@@ -1,6 +1,6 @@
 # Website Name -> HoTel FaLiz
-# [Live Link] (https://assignment-11-5a8b0.web.app/)
-# [Server Repository] (https://github.com/Farsit-007/Assignment-11-Server)
+# [Live Link](https://assignment-11-5a8b0.web.app/)
+# [Server Repository](https://github.com/Farsit-007/Assignment-11-Server)
 # Website Category -> Hotel Booking Website
 
  • Modern and Intuitive Interface:
