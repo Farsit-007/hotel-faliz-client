@@ -14,7 +14,7 @@ const FeaturedRoom = () => {
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         const getData = async () => {
-            const { data } = await axios(`https://server-navy-two-99.vercel.app/featured-room`)
+            const { data } = await axios(`https://assignment-11-server-gamma-ivory.vercel.app/featured-room`)
             setRooms(data)
             setLoading(false);
         }

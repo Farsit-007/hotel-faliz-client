@@ -56,8 +56,8 @@ const RoomDetails = () => {
             price
         }
         try {
-            const { data } = await axios.post(`https://server-navy-two-99.vercel.app/booking`, bookDetails)
-            const { data2 } = await axios.patch(`https://server-navy-two-99.vercel.app/booking/${_id}`, { availability: 'Unavailable' })
+            const { data } = await axios.post(`https://assignment-11-server-gamma-ivory.vercel.app/booking`, bookDetails)
+            const { data2 } = await axios.patch(`https://assignment-11-server-gamma-ivory.vercel.app/booking/${_id}`, { availability: 'Unavailable' })
             setShowModal(true);
             setBookingCompleted(true);
             localStorage.setItem("bookingCompleted", JSON.stringify(true));
@@ -95,7 +95,7 @@ const RoomDetails = () => {
         const email = user?.email;
         const review = { name, comment, ratings, roomId, email, images: user?.photoURL }
         try {
-            const { data } = await axios.post(`https://server-navy-two-99.vercel.app/review`, review)
+            const { data } = await axios.post(`https://assignment-11-server-gamma-ivory.vercel.app/review`, review)
             toast.success("Thanks for your feedback");
             form.reset()
             navigate('/mybooking')

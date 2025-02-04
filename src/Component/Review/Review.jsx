@@ -14,7 +14,7 @@ const Review = () => {
     useEffect(() => {
         
         const getData = async () => {
-            const { data } = await axios(`https://server-navy-two-99.vercel.app/allreview`)
+            const { data } = await axios(`https://assignment-11-server-gamma-ivory.vercel.app/allreview`)
             setRev(data)
             setLoading(false);
         }

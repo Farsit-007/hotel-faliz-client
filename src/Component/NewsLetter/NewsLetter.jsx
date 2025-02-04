@@ -10,7 +10,7 @@ const NewsLetter = () => {
         const email = form.email.value;
         const newLetter = { email }
         try {
-            const { data } = await axios.post(`https://server-navy-two-99.vercel.app/newsletter`, newLetter)
+            const { data } = await axios.post(`https://assignment-11-server-gamma-ivory.vercel.app/newsletter`, newLetter)
             toast.success("Thanks for subscribe");
             form.reset()
         } catch (err) {

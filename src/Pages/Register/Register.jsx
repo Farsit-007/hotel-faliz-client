@@ -30,7 +30,7 @@ const Register = () => {
         try {
             const result = await createUser(userEmail, userPassword)
             await profileUpdate(userName, userPhoto)
-            const { data } = await axios.post(`https://server-navy-two-99.vercel.app/jwt`, { email: result?.user?.email }, { withCredentials: true })
+            const { data } = await axios.post(`https://assignment-11-server-gamma-ivory.vercel.app/jwt`, { email: result?.user?.email }, { withCredentials: true })
             console.log(data);
             toast.success("Welcome to HoTel FaLiz")
             navigate(location.state ? location.state : '/')

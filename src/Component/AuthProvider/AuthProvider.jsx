@@ -19,7 +19,7 @@ const AuthProvider = ({ children }) => {
 
     const logOut = async() => {
         setLoading(true)
-         const {data} =  await axios.post(`https://server-navy-two-99.vercel.app/logout`,{},{withCredentials:true})
+         const {data} =  await axios.post(`https://assignment-11-server-gamma-ivory.vercel.app/logout`,{},{withCredentials:true})
         console.log(data);
          return signOut(auth)
     }

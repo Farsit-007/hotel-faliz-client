@@ -11,7 +11,7 @@ const Rooms = () => {
     const [loading, setLoading] = useState(true);
     const getData = async (minPrice, maxPrice) => {
         try {
-            let url = 'https://server-navy-two-99.vercel.app/featured-room';
+            let url = 'https://assignment-11-server-gamma-ivory.vercel.app/featured-room';
             if (minPrice && maxPrice) {
                 url += `?minPrice=${minPrice}&maxPrice=${maxPrice}`;
             } else if (minPrice) {

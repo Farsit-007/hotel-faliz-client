@@ -15,7 +15,7 @@ const MyBooking = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [loading, setLoading] = useState(true);
     const getData = async () => {
-        const { data } = await axios(`https://server-navy-two-99.vercel.app/booking/${user?.email}`, { withCredentials: true })
+        const { data } = await axios(`https://assignment-11-server-gamma-ivory.vercel.app/booking/${user?.email}`, { withCredentials: true })
         setBooking(data)
         setLoading(false);
     }
@@ -25,9 +25,9 @@ const MyBooking = () => {
 
     const handleDelete = async (id, id2) => {
         try {
-            const updateAvail = await axios.patch(`https://server-navy-two-99.vercel.app/bookingupdate/${id2}`, { availability: 'Available' })
+            const updateAvail = await axios.patch(`https://assignment-11-server-gamma-ivory.vercel.app/bookingupdate/${id2}`, { availability: 'Available' })
             console.log(updateAvail);
-            const { data } = await axios.delete(`https://server-navy-two-99.vercel.app/bookingDelete/${id}`)
+            const { data } = await axios.delete(`https://assignment-11-server-gamma-ivory.vercel.app/bookingDelete/${id}`)
 
             if (data.deletedCount > 0) {
                 Swal.fire({
@@ -65,7 +65,7 @@ const MyBooking = () => {
         const reDate = startDate.toLocaleDateString();
         const update = { reDate };
         try {
-            const { data2 } = await axios.patch(`https://server-navy-two-99.vercel.app/updatebooking/${Id}`, update)
+            const { data2 } = await axios.patch(`https://assignment-11-server-gamma-ivory.vercel.app/updatebooking/${Id}`, update)
             getData();
             toast.success("Booking date updated successfully");
         } catch (err) {
